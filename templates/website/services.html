@@ -1,0 +1,94 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/style.css'%}><br>
+<div class='body'>
+<h1><p  class=title>Services</p></h1>
+<div id='topmenu'>
+    <img src='http://127.0.0.1:8000/static/images/logo3.jpg'alt='logo not found'/>
+        
+    <h6>
+        <p>Picta - Delivering Productivity Hacks</p>
+    </h6>
+</div>
+    <div class='main_container'>
+	<div class='left'id='left'>
+    <h3>
+        Quick Links
+    </h3>
+    <h6 class='link'>
+        Feedback:-<br>
+        Services:-<br>
+        Contact Us:-<br>
+        About Us:-<br>
+        Home:-<br>
+    </h6>
+</div>
+	<div class='center'id='body'><h1>
+	<p class='title'>Services</p></h1>
+	<table >
+	<thead class='services' text-align='center'>
+	<th>Name:</th>
+	<th >Status:</th>
+	<th >Type:</th>
+	<th >Services:</th>
+	<th >Actions:</th>
+	<th>Email:</th>
+	</thead>
+	<tr>
+	<td class='servicest'>Picta P.A</td>
+	<td class='servicest'>No Account</td>
+	<td class='servicest'>Productivity</td>
+	<td class='servicest'>Self Service</td>
+	<td class='servicest'><a href='{% url 'pa_app:dashboard'%}'>Launch</a></td>
+	<td class='servicest'>Send</td>
+	</tr>
+		<tr>
+	<td class='servicest'>Picta D.A</td>
+	<td class='servicest'>No Account</td>
+	<td class='servicest'>I.T Support</td>
+	<td class='servicest'>On Demand</td>
+	<td class='servicest'><a href='{% url 'da_app:da'%}'>Launch</a></td>
+	<td class='servicest'>Send</td>
+	</tr>
+		<tr>
+	<td class='servicest'>Picta I.P</td>
+	<td class='servicest'>No Account</td>
+	<td class='servicest'>Finance</td>
+	<td class='servicest'>Paid</td>
+	<td class='servicest'>Launch</td>
+	<td class='servicest'>Send</td>
+	</tr>
+		<tr>
+	<td class='servicest'>Picta F.P</td>
+	<td class='servicest'>No Account</td>
+	<td class='servicest'>Finance</td>
+	<td class='servicest'>Free</td>
+	<td class='servicest'>Launch</td>
+	<td class='servicest'>Send</td>
+	</tr>
+		<tr>
+	<td class='servicest'>Picta S.A</td>
+	<td class='servicest'>No Account</td>
+	<td class='servicest'>I.T Support</td>
+	<td class='servicest'>Paid</td>
+	<td class='servicest'>Launch</td>
+	<td class='servicest'>Send</td>
+	</tr>
+	</table>
+	</div>
+	<div class='right'id='right'>
+    <h3>
+        Services
+    </h3>
+    <h6 class='link'>
+        Picta D.A<br>
+        Picta S.A<br>
+        Picta I.P<br>
+        Picta F.P<br>
+        Picta P.AS<br>
+    </h6>
+</div>
+	</div>
+</div>
+{% endblock %}

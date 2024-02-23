@@ -1,0 +1,150 @@
+.body{
+    background-color: :#eaeb9a;
+}
+.title{
+    color: :#888a23;
+    font-size: 40px;
+    background-color:#cecf95;
+}
+.topbuffer{
+    height:1px;
+    width: 50px;
+    padding:50px
+}
+.leftmenutext{
+    background-color: #d4d59f;
+    padding: 10px;
+    text-align: right;
+}
+
+.subbodybody{
+    background-color: #77775b;
+    flex-grow: 0.95;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    padding: 10px;
+}
+.menubutton,.addtaskbutton,.alltasksbutton,.dailytasksbutton,.weeklytasksbutton,.monthlytasksbutton{
+    color:#d4d59f;
+    height: 40px;
+    width: 80px;
+    background-color: 4c4c3a;
+}
+.bodys{
+    display: flex;
+}
+.i{
+    background-color: 77775b;
+    color:white;
+}
+.bodytext{
+    padding:1px;
+    background-color: 77775b;
+    color:white;
+    font-family: fantasy;
+    font-style: oblique;
+}
+.frequency{
+    border-style:double;
+    border-color: white;
+    padding:20px;
+}
+.dash{
+    color:888a23;
+}
+.myworkday{
+    color:#4c4c3a;
+    font-size: 30px;
+}
+.taskdescription{
+    flex:0 0 300px;
+    padding:1px;
+    background-color: 77775b;
+    color:white;
+    font-family: fantasy;
+    font-style: oblique;
+}
+.taskfrequency{
+    
+}
+.taskname{
+    flex:0 0 100px;
+    padding:1px;
+    background-color: 77775b;
+    color:white;
+    font-family: fantasy;
+    font-style: oblique;
+    
+}
+.workdaytitle{
+    color:888a23;
+    font-size: 20px;
+}
+.opttext{
+    color:white;
+}
+.menu{
+    text-align: center;
+    padding: 15px;
+    background-color: #eaeb9a;
+}
+.subbody{
+    display: flex;
+    background-color: #eaeb9a;
+}
+
+.buffer{
+    background-color: #eaeb9a;
+    flex:0 0 10px;
+}
+.leftmenu{
+    background-color: #eaeb9a;
+    flex:0 0 100px;
+}
+.optimize{
+    background-color: #cbcc81;
+    padding:10px;
+    flex-grow: 0.5;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;    
+}
+.profile{
+    background-color: #dcc7c7;
+    padding:10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+}
+.bottom{
+    background-color: #eaeb9a;
+    height: 20px;
+}
+.link{
+    color:red;
+}
+.notifications{
+    background-color: white;
+    padding:10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+}
+#logo{
+    height:15px;
+    width: 15px;
+}
+.workday{
+    background-color: white;
+    padding: 10px;
+    flex-grow: 0.5;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+}

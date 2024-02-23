@@ -1,0 +1,70 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/style.css'%}>
+<div class='body'>
+
+<h1 class='title'>Registration</h1>
+<div id='topmenu'>
+        <img src='http://127.0.0.1:8000/static/images/logo3.jpg'alt='logo not found'/>
+
+    <h6>
+        Already have an Account ?    <a href='{% url 'website_app:login'%}' class='link'>Login Here</a><br>
+    </h6>
+</div>
+<div class='main_container'>
+ 
+    <div class='left'id='left'>
+    <h3>
+        Quick Links
+    </h3>
+    <h6 class='link'>
+        Feedback:-<br>
+        Services:-<br>
+        Contact Us:-<br>
+        About Us:-<br>
+        Home:-<br>
+    </h6>
+</div>
+       <div id='body' class='center'>
+
+    <form action={% url 'website_app:register'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+        <div class='title'>
+        <h1 >Create Account
+        </h1></div>
+        <p>Username:</p>
+        <input type="hidden" id="csrfToken" value="{{ csrf_token }}">
+        <input type='username' name='username' placeholder='Unique Username'>
+        <p>Password:</p>
+        <input type='password' name='password' value='' placeholder='Strong Password'>
+        <p>First Name:</p>
+        <input type='name' name='name' placeholder=''>
+        <p>Surname:</p>
+        <input type='surname' name='surname' placeholder=''>
+         <p>Email Address:</p>
+        <input type='email' name='email' placeholder='x@x.x'>
+         <p>Phone Number:</p>
+        <input type='phonenumber' name='phonemunber' placeholder='+xxx xxx xxx xxx'>
+        <br><br>
+        <input class='button1' type='submit' name='' value='Register'>
+        
+        
+    </form>
+</div>
+    <div class='right' id='right'>
+    <h3>
+        Services
+    </h3>
+    <h6 class='link'>
+        Picta D.A<br>
+        Picta S.A<br>
+        Picta I.P<br>
+        Picta F.P<br>
+        Picta P.A<br>
+    </h6>
+</div>
+</div>
+</div>
+
+{% endblock %}

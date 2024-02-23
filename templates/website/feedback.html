@@ -1,0 +1,67 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/style.css'%}><br>
+<div class='body'>
+<h1><p  class=title>Feedback</p></h1>
+<div id='topmenu'>
+    <img src='http://127.0.0.1:8000/static/images/logo3.jpg'alt='logo not found'/>
+        
+    <h6>
+        <p>Picta - Delivering Productivity Hacks</p>
+    </h6>
+</div>
+    <div class='main_container'>
+        <div class='left'id='left'>
+    <h3>
+        Quick Links
+    </h3>
+    <h6 class='link'>
+        Feedback:-<br>
+        Services:-<br>
+        Contact Us:-<br>
+        About Us:-<br>
+        Home:-<br>
+    </h6>
+</div>
+<div class='center'id='body'><h1>
+    <p class='title'>Feedback</p></h1>
+    <form  action={% url 'website_app:feedback'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+        
+        <p class='hellotext'>Hello:{{user.username}}</p><h3><p class='link'>{%if error%}{{error}}{%endif%}</p>
+        <p>Please Fill The Form</p></h3>
+        <p>Service Name:</p><div class='servicename'><p class = 'oneoption'>Pick One Option</p>
+        Picta P.A<input type='radio'name='service'value='pa'autocomplete="off">(Personal Assistant)<br>
+        Picta D.A<input type='radio'name='service' value='da'autocomplete="off">(Digitalisation and Automation)<br>
+        Picta S.A<input type='radio'name='service'value='sa'autocomplete="off">(Smart Assistant)<br>
+        Picta I.P<input type='radio'name='service'value='ip'autocomplete="off">(Investors Portal)
+       <br>
+        Picta F.P<input type='radio'name='service'value='fp'autocomplete="off">(Finance Portal)<br>
+        Picta Website<input type='radio'name='service'value='pw'autocomplete="off">(Picta Website)  </div>
+        <p>Rating:</p><div class='servicename'>
+        <p class = 'oneoption'>Pick One Option</p>
+        1 Star<input id='option1' type='radio'name='stars' autocomplete="off" value='1'> (Not Bad)<br>
+        2 Stars<input id='option1' type='radio'name='stars'autocomplete="off" value='2'>(Slightly Good)<br>
+        3 Stars<input id='option1' type='radio'name='stars'autocomplete="off"value='3'>(Good)<br>
+        4 Stars<input type='radio'name='stars' autocomplete="off" value='4'>(Very Good)<br>
+        5 Stars<input type='radio'name='stars' autocomplete="off" value='5'>(Excellent)</div>
+        <p>Comment:</p>
+        <input type="text"name='comment'>(Required)<br><br>
+        <input type='submit' class='button2'name='' value='Submit'>
+    </form></div>
+        <div class='right'id='right'>
+    <h3>
+        Services
+    </h3>
+    <h6 class='link'>
+        Picta D.A<br>
+        Picta S.A<br>
+        Picta I.P<br>
+        Picta F.P<br>
+        Picta P.AS<br>
+    </h6>
+</div>
+    </div>
+</div>
+{% endblock %}

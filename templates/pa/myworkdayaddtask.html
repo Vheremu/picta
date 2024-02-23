@@ -1,0 +1,115 @@
+{% extends 'pa/base.html' %}
+{% load static %}
+
+<script>
+    
+function m1(){
+  $.ajax({
+      url: "{% url 'pa_app:myworkday' %}",
+      type: "POST",
+      data: {
+          action: 'menubuttonclick', 
+          csrfmiddlewaretoken: "{{ csrf_token }}"
+      },
+      success: function(response) {
+          // Display the data in an alert
+          console.log(response);
+      }
+  });
+}m1();
+    var data = {
+          action: 'menubuttonclick', 
+          csrfmiddlewaretoken: "{{ csrf_token }}",
+      };
+    function menubuttonclick1(){
+    console.log('menu button was clicked');
+    menu='hello';
+    
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", 'http://127.0.0.1:8000/pa/myworkday', false);
+    ajax.send(data);
+    console.log(ajax.responseText);
+}
+</script>
+
+
+{% block body_block %}
+
+
+<div class='body'>
+<div class='menu'><img align='left' id='logo' src='http://127.0.0.1:8000/static/images/logopa.jpg'><p class='myworkday'>My Workday</p></div>
+<div class='subbody'>
+    <div class='leftmenu'>
+        <div class='topbuffer'>
+        </div>
+        <div class='leftmenutext'>
+            <h2 class='t'>
+                 <button class='menubutton' onclick="menubuttonclick()">Menu</button>
+            </h2>
+<h5 class='t'> <button class='addtaskbutton' onclick="addtaskbuttonclick()">Add Task</button> </h5>
+<h5 class='t'><button class='alltasksbutton' onclick="alltasksbuttonclick()">Digitalize Task</button></h5>
+<h5 class='t'> <button class='dailytasksbutton' onclick="dailytasksbuttonclick()">Automate Task</button></h5>
+<h5 class='t'> <button class='weeklytasksbutton' onclick="weeklytasksbuttonclick()">Outsource Task</button></h5>
+<h5 class='t'> <button class='monthlytasksbutton' onclick="monthlytasksbuttonclick()">Source Task</button></h5>
+<h5 class='t'>Source Tasks</h5>
+<h class='t'5>Outsource Tasks</h5>
+        </div>
+        <div class='topbuffer'>
+        </div>
+        
+    </div>
+    <div class='subbodybody'>
+        <div class='center'id='body'><h1>
+    <p class='i' id='i'>
+        Add Task</p></h1>{%if added%}<p class=link>{{added}}</p>{%endif%}
+         <div class='bodytext'>
+               <form  action={% url 'pa_app:myworkday'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+        <h1 class='title'>
+        </h1>
+{%if comment%}<p class=link>{{comment}}</p>{%endif%}
+        <p>Task Name:</p>
+        <input type='taskname' name='taskname' placeholder=''>
+        <p>Description:</p>
+        <input type='text' name='description' value='' placeholder='Short Task Description'><br>
+        
+        <p>Frequency:</p>
+        <div class='frequency'>
+                   daily<input type="radio"name='frequency'value='daily'autocomplete='on'><br>
+            weekly<input type="radio"name='frequency'value='weekly'autocomplete='off'><br>
+            monthly<input type="radio"name='frequency'value='monthly'autocomplete='off'><br>
+                  </div>
+                   <div><p>Time Taken:</p><div class='frequency'>
+                 less than 10 minutes<input type="radio"name='time'value='<10'autocomplete='on'><br>
+                         less than 30 minutes<input type="radio"name='time'value='<30'autocomplete='off'><br>
+                             less than 1 hour<input type="radio"name='time'value='<60'autocomplete='off'><br>
+                             less than 2 hours<input type="radio"name='time'value='<120'autocomplete='off'><br>
+                             more than 2 hours<input type="radio"name='time'value='>120'autocomplete='on'><br>
+                   </div>{%if cost%}<p class=link>{{cost}}</p>{%endif%}<div>
+                   <p>Cost Associated:</p><div class='frequency'>Less than $10<input type="radio"name='cost'value='<10'autocomplete='off'><br>
+                       Less than $30<input type="radio"name='cost'value='<30'autocomplete='off'><br>
+                       Less than $100<input type="radio"name='cost'value='<100'autocomplete='off'><br>
+                       Less than $200<input type="radio"name='cost'value='<200'autocomplete='off'><br>
+                       More than $200<input type="radio"name='cost'value='>200'autocomplete='on'><br></div></div>{%if nature%}<p class=link>{{nature}}</p>{%endif%}
+                   <div><p>Task Nature:</p>
+                       <div class='frequency'>Manual<input type="radio"name='nature'value='manual'autocomplete='on'><br>
+                       Digital<input type="radio"name='nature'value='digital'autocomplete='off'><br>
+                    Automated<input type="radio"name='nature'value='automated'autocomplete='off'><br>
+                    Creative<input type="radio"name='nature'value='creative'autocomplete='off'></div>
+                        <input type='hidden' name='submittask' placeholder=''value='submittask'>
+                   </div><div><input type='submit' class='addtaskbutton'name='' value='Add Task'></div><br>
+     
+        
+        
+    </form>
+            </div>
+  
+   
+      
+
+    </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

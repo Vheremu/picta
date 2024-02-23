@@ -1,0 +1,63 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/style.css'%}><br>
+<div class='body'>
+<h1><p  class=title>Contact Us</p></h1>
+<div id='topmenu'>
+    <img src='http://127.0.0.1:8000/static/images/logo3.jpg'alt='logo not found'/>
+        
+    <h6>
+        <p>Picta - Delivering Productivity Hacks</p>
+    </h6>
+</div>
+    <div class='main_container'>
+    <div class='left'id='left'>
+    <h3>
+        Quick Links
+    </h3>
+    <h6 class='link'>
+        Feedback:-<br>
+        Services:-<br>
+        Contact Us:-<br>
+        About Us:-<br>
+        Home:-<br>
+    </h6>
+</div>
+<div class='center' id='body' >
+
+    <form  action={% url 'website_app:contactus'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+        <h1 class='title'>Contact Us
+        </h1><p class='link'>{%if error %}{{error}}{%endif%}</p>
+        <p>Name:</p>
+        <input type='text' name='username' placeholder=''>
+        <p>Email:</p>
+        <input type='email' name='email' value='' placeholder='xx@xx.xx'>
+        <p>Company:</p>
+        <input type='text' name='company' value='' placeholder='Full Company Name'>(Optional)
+        <p># of employees:</p>
+        <input type='int' name='employees' value='' placeholder='# of company employees'>(Optional)
+        <p>Reoson for contacting us:</p>
+        <input type='text' name='reoson' value='' placeholder=''><br><br>
+        <input type='submit' class='button2'name='' value='Submit'>
+        
+        
+        
+    </form>
+</div>
+        <div class='right'id='right'>
+    <h3>
+        Services
+    </h3>
+    <h6 class='link'>
+        Picta D.A<br>
+        Picta S.A<br>
+        Picta I.P<br>
+        Picta F.P<br>
+        Picta P.AS<br>
+    </h6>
+</div>
+    </div>
+</div>
+{% endblock %}

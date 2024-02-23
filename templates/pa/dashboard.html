@@ -1,0 +1,37 @@
+{% extends 'pa/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/pa.css'%}><br>
+
+<div class='body'>
+    <div class='menu'><img align='left' id='logo' src='http://127.0.0.1:8000/static/images/logopa.jpg'><h class='title'><p class='dash'>Dashboard</p></h></div>
+    <div class ='subbody'>
+    <div class='buffer'></div>
+    <div class='workday'><a href='{%url 'pa_app:myworkday'%}'>
+        <p class='workdaytitle'> My Workday</p><hr color='eaeb9a'>
+        <p>Word reconsiliation task</p></a>
+    </div>
+        <div class='buffer'></div>
+    <div class='optimize'>
+        <p class='workdaytitle'>Optimize</p><hr color='#888a23'>
+        <p class='opttext'>Word reconsiliation task</p>
+    </div>
+        <div class='buffer'></div>
+    <div>
+    <div class='notifications'>
+        <p class=workdaytitle>Notifications</p><hr color='eaeb9a'>
+        <p>Word reconsiliation task </p>
+    </div><br>
+    <div class='profile'>
+        <p class='workdaytitle'>My Profile</p><hr color='eaeb9a'>
+    </div>
+        </div>
+        <div class='buffer'></div>
+        </div>
+    <div class='bottom'></div>
+</div>
+
+
+
+
+{% endblock %}

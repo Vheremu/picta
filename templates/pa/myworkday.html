@@ -1,0 +1,80 @@
+{% extends 'pa/base.html' %}
+{% load static %}
+
+<script>
+    
+function m1(){
+  $.ajax({
+      url: "{% url 'pa_app:myworkday' %}",
+      type: "POST",
+      data: {
+          action: 'menubuttonclick', 
+          csrfmiddlewaretoken: "{{ csrf_token }}"
+      },
+      success: function(response) {
+          // Display the data in an alert
+          console.log(response);
+      }
+  });
+}m1();
+    var data = {
+          action: 'menubuttonclick', 
+          csrfmiddlewaretoken: "{{ csrf_token }}",
+      };
+    function menubuttonclick1(){
+    console.log('menu button was clicked');
+    menu='hello';
+    
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", 'http://127.0.0.1:8000/pa/myworkday', false);
+    ajax.send(data);
+    console.log(ajax.responseText);
+}
+</script>
+
+
+{% block body_block %}
+
+
+<div class='body'>
+<div class='menu'><img align='left' id='logo' src='http://127.0.0.1:8000/static/images/logopa.jpg'><p class='myworkday'>My Workday</p></div>
+<div class='subbody'>
+    <div class='leftmenu'>
+        <div class='topbuffer'>
+        </div>
+        <div class='leftmenutext'>
+            <h2 class='t'>Menu
+                 <button class='menubutton' onclick="menubuttonclick()">Menu</button>
+            </h2>
+<h5 class='t'>Add Task<button class='addtaskbutton' onclick="addtaskbuttonclick()">AddTask</button></h5>
+<h5 class='t'>All Tasks</h5>
+<h5 class='t'>Daily Tasks</h5>
+<h5 class='t'>Weekly Tasks</h5>
+<h5 class='t'>Monthly Tasks</h5>
+<h5 class='t'>Source Tasks</h5>
+<h5 class='t'>Outsource Tasks</h5>
+        </div>
+        <div class='topbuffer'>
+        </div>
+        
+    </div>
+    <div class='subbodybody'>
+        <div class='center'id='body'><h1>
+    <p class='title' id='i'>
+        {% if menu %}
+        Menu
+        {% endif %}<br>
+        Feedback</p></h1>
+         {% if menu %}
+            <p>memu items</p>
+        {%endif%}
+  
+        <button onclick='st()'>Test</button>
+      
+
+    </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

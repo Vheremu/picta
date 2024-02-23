@@ -1,0 +1,35 @@
+{% load static %}
+<html>
+<head>
+    <link rel='stylesheet'href={% static 'css/style.css'%}>
+<title>
+{% block title_html %}Picta Website{% endblock %}
+</title>
+</head>
+<body><br>
+
+<table class='table'>
+   <td id='td1'> <a href='{% url 'website_app:index'%}'><img src='http://127.0.0.1:8000/static/images/home1.jpg'alt='ohh noo its john cena '/><br>Home</a></td>
+    <td class='td2'><a href='{% url 'website_app:services'%}'><img class='td2'src='http://127.0.0.1:8000/static/images/servicesicon.jpg'alt='ohh noo its john cena '/><br>Services</a></td>
+   <td class='td3'> <a href='{% url 'website_app:feedback'%}'><img src='http://127.0.0.1:8000/static/images/feedback.jpg'alt='ohh noo its john cena '/>Feedback</a></td>
+    
+    <td class='td4'><a href='{% url 'website_app:contactus'%}'><img src='http://127.0.0.1:8000/static/images/contactus.jpg'alt='ohh noo its john cena '/><br>Contact Us</a></td>
+   <td class='td5'><a href='{% url 'website_app:about'%}'><img src='http://127.0.0.1:8000/static/images/aboutus2.jpg'alt='ohh noo its john cena '/> <br>About Us</a></td>
+    {{user.name}}
+    {% if user.is_authenticated %}
+            <td class='td6'><a href='{% url 'accounts_app:user_logout'%}'><img src='http://127.0.0.1:8000/static/images/logo5.jpg'alt='ohh noo its john cena '/>Hello:{{user.username}} Logout</a></td>
+          {% else %}
+            <td class='td7'><a href='{% url 'accounts_app:user_login'%}'><img src='http://127.0.0.1:8000/static/images/logo6.jpg'alt='ohh noo its john cena '/><br>login</a></td>
+          {% endif %}
+</table>{{user.profile_pics}}
+</body>
+{% block body_block %}{% endblock %}
+    <div align='center'>
+<br><p  class='brandtext'>Our Mission - To Deliver Professional Productivity Services.</p>
+    <br><br></div>
+<div class='footer'>
+    <div class=footerleft><h5>copyright Picta 2024</h5></div>
+    <div class='footercenter'>Quick Links</div>
+    <div class='footerright'>footerright</div>
+</div>
+</html>

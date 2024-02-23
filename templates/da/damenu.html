@@ -1,0 +1,39 @@
+{% extends 'da/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/da.css'%}><br>
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/logoda.jpg'>
+        <h2 class='title'>Digitalization and Automation</h2>
+    </div>
+    <div class='subbody'>
+        
+        <div class='menudiv'>
+            <div class='topbuffer'>
+                
+            </div><p>
+            <button class='menu'onclick='menubuttonclick()'>Menu</button></p>
+            <div class='buffer'>
+                
+            </div><p>
+            <button class='menuitem'onclick='ticketsbuttonclick()'>Tickets</button></p><p>
+            <button class='menuitem'onclick='appointmentsbuttonclick()'>Appointments</button></p><p>
+            <button class='menuitem'onclick='projectsbuttonclick()'>Projects</button></p><p>
+            <button class='menuitem'onclick='queriesbuttonclick()'>Queries</button></p>
+            <div class='bottombuffer'>
+                
+            </div>
+        </div>
+        <div class='buffer2'>
+        </div>
+        <div class='contentdiv'>
+            <p>Menu</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}
