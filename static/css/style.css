@@ -53,7 +53,7 @@
 .footer{
     background-color: #ebebcf;
     display:flex;
-    padding:50px
+    padding:50px;
 }
 .body{
     background-color: #ebebcf;
@@ -78,19 +78,23 @@
     padding:20px;
 }
 .footerleft{
-    flex-grow:0.5;
-     background-color: #dedece;
-    padding:20px;
+    flex-grow:0.3;
+    background-color: #dedece;
+    padding:5px;
+    width:30%;
 }
+
 .footercenter{
-    flex-grow: 0.5;
-     background-color: #dedece;
-    padding:20px;
+    flex-grow: 0.4;
+    background-color: #dedece;
+    padding:5px;
+    width:30%;
 }
 .footerright{
-    flex-grow: 0.5;
-     background-color: #dedece;
-    padding:20px;
+    flex-grow: 0.3;
+    background-color: #dedece;
+    padding:5px;
+    width:30%;
 }
 .left{
     flex:0 0 150px;
@@ -102,14 +106,21 @@
 }
 .center{
     flex-grow:1;
+    
 }
 .introd{
     background-color: white;
     display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 .img1{
     flex-grow: 1;
-    resize: inherit;
+    display: flex;
+    margin: 7px;
+    flex-direction: column;
+    width: 250px;
 }
 .table{
     display:flex;

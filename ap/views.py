@@ -11,6 +11,7 @@ from code import a1
 @login_required
 @csrf_exempt
 def listadds(request):
+    #python 3.7
     token=request.POST.get("token")
     notoken=request.POST.get("notoken")
     tokenconfirm=request.POST.get('tokenconfirm')

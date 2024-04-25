@@ -71,22 +71,22 @@ def withdrawfunds(request):
             balance=AccountBalance.objects.get(account=user)
             
             balance.amount=balance.amount-int(amount)
-            if balance.amount<=20:
+            if balance.amount<=19:
                 message1='Insufficient Funds'
                 my_dict={'message1':message1}
                 return render(request,'fp/withdrawfunds.html',context=my_dict)
             currency=request.POST.get('currency')
             print(currency)
-            amount=int(request.POST.get('amount'))
+            amount=request.POST.get('amount')
             print(amount)
             number=request.POST.get('number')
             print(number)
-            financialinstritution=request.POST.get('financialinstitution')
+            financialinstitution=request.POST.get('financialinstitution')
             print(financialinstitution)
             print('helo world')
             balance.save()
             
-            ZipitWithdrawal.objects.create(zipitwithdrawalid=getid8(),number=number,amount=int(amount),account=user,status='open',currency=currency,financialinstitution=financialinstitution)
+            ZipitWithdrawal.objects.create(zipitwithdrawalid=getid8(),number=number,amount=int(amount),account=user,status='open',currency=currency,financialinstitution=financialinstitution,date=datetime.datetime.now())
             print('helo world')
             Transaction.objects.create(transactionid=getid6(),account=user,transactiontype=request.POST.get('type'),amount=amount,date = datetime.datetime.now(),staffid=user,reference=request.POST.get('number'))
             print('Successfully proccessed withdrawal')

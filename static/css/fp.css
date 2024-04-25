@@ -58,19 +58,23 @@
     padding:50px
 }
 .footerleft{
-    flex-grow:0.5;
-     background-color: #dedece;
-    padding:20px;
+    flex-grow:0.3;
+    background-color: #dedece;
+    padding:5px;
+    width:30%;
 }
+
 .footercenter{
-    flex-grow: 0.5;
-     background-color: #dedece;
-    padding:20px;
+    flex-grow: 0.4;
+    background-color: #dedece;
+    padding:5px;
+    width:30%;
 }
 .footerright{
-    flex-grow: 0.5;
-     background-color: #dedece;
-    padding:20px;
+    flex-grow: 0.3;
+    background-color: #dedece;
+    padding:5px;
+    width:30%;
 }
 .payments{
     background-color: #453c11;

@@ -38,7 +38,6 @@ def printpromocode(image,promocode):
     im1.save('promo2.png')
    
     return im1
-x=printpromocode('promo.png','hello')
 def saveimage(image):
     im1=image
     im1.save('promo2.png')
