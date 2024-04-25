@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'accounts',
     'da',
     'ip',
+    'fp',
     'pa',
     'sa',
+    'ap',
     'website',
 ]
 

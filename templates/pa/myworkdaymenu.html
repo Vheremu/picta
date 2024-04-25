@@ -51,8 +51,7 @@ function m1(){
 <h5 class='t'> <button class='dailytasksbutton' onclick="dailytasksbuttonclick()">Automate Task</button></h5>
 <h5 class='t'> <button class='weeklytasksbutton' onclick="weeklytasksbuttonclick()">Outsource Task</button></h5>
 <h5 class='t'> <button class='monthlytasksbutton' onclick="monthlytasksbuttonclick()">Source Task</button></h5>
-<h5 class='t'>Source Tasks</h5>
-<h class='t'5>Outsource Tasks</h5>
+
         </div>
         <div class='topbuffer'>
         </div>
@@ -62,7 +61,9 @@ function m1(){
         <div class='center'id='body'><h1>
     <p  class='i'>
         Menu</p></h1><hr class='bodytext'>
-            {%if user%}<p class='bodytext'>Hello: {{user}}</p>{%endif%}
+            {%if user%}<p class='bodytext'>Hello: {{user}}</p>
+            <p class = 'bodytext'>Optimize Your Workday Here.</p>
+          {%endif%}
         <h3 class=bodytext>
             <p>Total Tasks:{{total}}</p>
             <p>Daily Tasks:{{daily}}</p>
@@ -72,11 +73,15 @@ function m1(){
             <p>Digital Tasks:{{digital}}</p>
              <p>Automated Tasks:{{automated}}</p>
              <p>Out Sourced Tasks:{{outsourced}}</p>
-            <p>Sourced Tasks:{{sourced}}</p>
-            test text</h3>
+            <p>Sourced Tasks:{{sourced}}</p><hr>
+            <p>Follow up on Tickets</p>
+            <p><a href='http://127.0.0.1:8000/da'><button class='addtaskbutton'onclick='http://127.0.0.1:8000/fp'>Picta D.A</button></a></p>
   
-        <button onclick='st()'>Test</button>
       
+           </h3>
+             <hr>
+    
+           
 
     </div>
     </div>

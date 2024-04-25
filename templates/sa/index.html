@@ -1,0 +1,77 @@
+{% extends 'sa/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/sa.css'%}><br>
+<div class='body'>
+<h1><img class='logo'src='http://127.0.0.1:8000/static/images/sa.png'></h1>
+
+    <div class=block ></div>
+        <div class=sa>
+            <div class=samenu>
+                About
+            </div>
+            <div class=br>
+            <div class=by ></div>
+            <div class=bt>
+               <h3> <p>Picta Seo A.I is a service that optimizes search ingine ranking of dynamic and static websites.Firstly Search Engine Optimization is carried up by webscrapping for data regarding clients key words. Using the data metas are built and injected into html so that web crawlers can find them. Key works are also injectect into HTML as well as external links to websites with similar content.Lastly submission of website to name servers that are most relevent is done. </p></h3>
+            </div>
+            <div class=by ></div></div>
+            <div class=samenu>
+                <p >How it works</p>
+            </div>
+            <div class=br>
+            <div class=by ></div>
+            <div class=bt>
+                <h3><p>To get your website optimized for search engine ranking by Picta S.A you upload all your .html files.Once you upload your files a ticket will be opened with<a class='link' href='{% url 'da_app:da'%}'> Picta D.A</a> our support service. From there you can follow up on your Ticket while your website is being optimized.</p></h3>
+            </div>
+            <div class=by ></div></div>
+            <div class=samenu>
+                <p >Upload .html files</p>
+            </div>
+            
+            <div class=by ></div>
+           <form  action={% url 'sa_app:sa'%} method='POST'enctype='multipart/form-data' method='post'>
+                 <div class=bt> 
+        {% csrf_token %}
+        
+                <h4><p>Step 1-Enter Number Of .html files:</p></h4>
+                <input type="number"name='number'placeholder='numbers only'>
+                      <input type='hidden' name='number1' value={{number1}}>
+                     <br><br><input class='sabtn'type=submit name=''value='Submit'
+                       </div></form>
+            <div class=by ></div></div>
+              <div class=br>
+            <div class=by ></div>
+            <div class=bt>
+                {%if success%}
+                <h3><p>{{success}}</p></h3>
+                <a href='http://127.0.0.1:8000/da'><button class='sabtn'onclick='http://127.0.0.1:8000/da'>Follow Up</button></a>
+                {%else%}
+                 <form  action={% url 'sa_app:sa'%} method='POST'enctype='multipart/form-data' method='post'>
+                 
+        {% csrf_token %}
+                <h3><p>Step 2-Uplod Your .html Files.</p></h3>
+                {%if number%}<p>Enter Website Name:</p>
+                     <input type="text"name='websitename'placeholder='Picta.com'>
+                <p>Enter Discount Token:</p>
+                     <input type="text"name='token'placeholder='Picta2024'> (Optional)
+                     <p>Upload Files:</p>
+               {%for num in number%}
+                <h3><p><input type="file" name='{{num}}'placeholder='+.html file+'></p></h3>
+               
+                    {%endfor%}
+                     
+                     <input type='hidden' name='htmlfiles' value='htmlfiles'>
+                     <input type='hidden' name='number1' value={{number1}}>
+                      <br><br><input class='sabtn'type=submit name=''value='Submit'>
+                       </form>
+                {%endif%}
+               {%endif%}
+            </div>
+            <div class=by ></div></div>
+            
+        </div>
+      <div class=block ></div>
+</div>
+{% endblock %}
+

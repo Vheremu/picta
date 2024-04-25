@@ -51,8 +51,7 @@ function m1(){
 <h5 class='t'><button class='dailytasksbutton' onclick="dailytasksbuttonclick()">Automate Task</button></h5>
 <h5 class='t'><button class='weeklytasksbutton' onclick="weeklytasksbuttonclick()">Outsource Task</button></h5>
 <h5 class='t'> <button class='monthlytasksbutton' onclick="monthlytasksbuttonclick()">Source Task</button></h5>
-<h5 class='t'>Source Tasks</h5>
-<h class='t'5>Outsource Tasks</h5>
+
         </div>
         <div class='topbuffer'>
         </div>
@@ -63,15 +62,18 @@ function m1(){
     <p class='i' >
         Source Task</p></h1>
         <div class='bodytext'>
+            
             {%if tasks%}
         </div>
   
         <button onclick='st()'>Test</button>
+             <p><h1>You are not elligible to outsource any tasks please register here</h1></p>
       
-
+      {%else%}
+<p>No Tasks Available At The Moment.</p>
     </div>
     </div>
 </div>
 
-</div>
+</div>{%endif%}
 {% endblock %}

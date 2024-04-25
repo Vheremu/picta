@@ -1,0 +1,69 @@
+{% extends 'ap/base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/ap.png'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext'>
+        <h2 class='title'><b><a href='{% url 'ap_app:ap'%}'class=p1>Views Adds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext1'>
+        <h2 class='title1'><a href='{% url 'ap_app:myadds'%}'class=p>My Adds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title1'><a href='{% url 'ap_app:myaccount'%}'class=p>My Account</a></h2></div></div>
+    </div><div class='payments'><a href='{% url 'ap_app:listadds'%}' class=aplink>Click here to list your Adds</a></div><div class='subbody1'>
+    <div class='subbody'>
+         <div class='subbody2'>
+        
+        
+             <p>
+                 <b>Picta Affiliate Program </b>
+             </p>
+             <h1 class = 'message'font-color=green>
+                 {%if message%}
+                 <p>
+                 <br>{{message}}
+             </p>
+             </h1>{%endif%}
+             <br></div><hr>
+        
+        {%if adds%}
+        {%for add in adds%}
+        <form action={% url 'ap_app:ap'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+        <div class='subbody4'> <p>
+                 <b>Add by: {{add.company}}</b>
+             </p></div>
+             <div class='subbody3'>
+            
+                  <img class='img1'src={{add.image.url}}>
+             </div>
+        <div class='subbody5'>
+             <p>
+                 <b><u>NB</b></u> - Cost: ${{add.cost}} .<br>
+                 <b><u>NB</b></u> - Payout: ${{add.payout}} per sale.<br>
+                 <br>Enter Invitation Token<br>
+                 <input type=text name=token placeholder='token here'>(Optional)
+                 <input type="hidden" name='addid'value={{add.addid}}>
+            </p><br><input class='submit'type="submit" value='Buy Add'></div><hr> 
+        
+        </form>
+        {%endfor%}
+        {%endif%}
+       
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

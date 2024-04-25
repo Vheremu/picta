@@ -4,7 +4,7 @@ from pa.models import Task
 class Ticket(models.Model):
     ticketid= models.IntegerField(blank=False,unique=True,primary_key=True)
     account = models.ForeignKey(User,on_delete=models.CASCADE)
-    task=models.ForeignKey(Task,on_delete=models.CASCADE)
+    task=models.ForeignKey(Task,on_delete=models.CASCADE,blank=True)
     request=models.CharField(blank=True,max_length=100,unique=False)
     opendate=models.DateTimeField(auto_now_add=True)
     closingdate=models.DateTimeField(null=True,blank=True,auto_now_add=False)
@@ -17,3 +17,5 @@ class Appointment(models.Model):
     account=models.ForeignKey(User,on_delete=models.CASCADE)
     task=models.ForeignKey(Task,on_delete=models.CASCADE)
     date=models.DateTimeField(null=True,blank=True,auto_now_add=False)
+    def __str__(self):
+        return self.task.name

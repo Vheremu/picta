@@ -1,3 +1,106 @@
+
+
+
+.link{
+    color:red;
+    font-family: monospace;
+    font-size:15px;
+}
+
+
+.subbodybody{
+    background-color: #77775b;
+    flex-grow: 0.95;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    padding: 10px;
+}
+.menubutton,.addtaskbutton,.alltasksbutton,.dailytasksbutton,.weeklytasksbutton,.monthlytasksbutton{
+    color:#d4d59f;
+    height: 40px;
+    width: 80px;
+    background-color: 4c4c3a;
+}
+
+.i{
+    background-color: 77775b;
+    color:white;
+}
+
+.frequency{
+    border-style:double;
+    border-color: white;
+    padding:20px;
+}
+
+
+
+
+
+.link{
+    color:red;
+}
+
+
+
+.servicest{
+	height:20px;
+	color:7f7f45;
+    font-style: normal;
+    font-variant: small-caps;
+	
+}
+.footer{
+    background-color: #ebebcf;
+    display:flex;
+    padding:50px
+}
+.footerleft{
+    flex-grow:0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.footercenter{
+    flex-grow: 0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.footerright{
+    flex-grow: 0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.brandtext{
+    font-family:serif;
+    font-style:normal;
+    color: #7f7f45;
+     font-size: 30;
+
+    text-decoration: overline;
+}
+.td2{
+	color:red;
+}
+.table{
+    display:flex;
+    background-color: #ebebcf;
+}
+td{
+    background-color:#ebebcf;
+    height: 40px;
+    width: 90px;
+    font-size: 15;
+    font-style: oblique;
+    text-align: center;
+}
+#td1{
+    color:white;
+}
+.ico{
+    height:15px
+}
 .body{
     background-color: #592626;
 }
@@ -22,9 +125,7 @@
 .subbody{
     display:flex;
 }
-.buffer2{
-    width:10px;
-}
+
 .menudiv{
     flex:0 0 150px;
     background-color: #672c2c;

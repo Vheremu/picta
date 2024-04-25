@@ -5,10 +5,10 @@
 <div class='body'>
 <h1><p  class=title>Services</p></h1>
 <div id='topmenu'>
-    <img src='http://127.0.0.1:8000/static/images/logo3.jpg'alt='logo not found'/>
+    <img class='logo' src='http://127.0.0.1:8000/static/images/logot.jpg'alt='logo not found'/>
         
     <h6>
-        <p>Picta - Delivering Productivity Hacks</p>
+        <p>Picta - Delivering Productivity Services</p>
     </h6>
 </div>
     <div class='main_container'>
@@ -17,11 +17,11 @@
         Quick Links
     </h3>
     <h6 class='link'>
-        Feedback:-<br>
-        Services:-<br>
-        Contact Us:-<br>
-        About Us:-<br>
-        Home:-<br>
+        <a class='link'href='{% url 'website_app:feedback'%}'>Feedback:</a>-<br>
+        <a class='link'href='{% url 'website_app:services'%}'>Services:-</a><br>
+        <a class='link'href='{% url 'website_app:contactus'%}'>Contact Us:-</a><br>
+        <a class='link'href='{% url 'website_app:about'%}'>About Us:-</a><br>
+        <a class='link'href='{% url 'website_app:index'%}'>Home:-</a><br>
     </h6>
 </div>
 	<div class='center'id='body'><h1>
@@ -37,15 +37,23 @@
 	</thead>
 	<tr>
 	<td class='servicest'>Picta P.A</td>
-	<td class='servicest'>No Account</td>
+	<td class='servicest'>Available</td>
 	<td class='servicest'>Productivity</td>
-	<td class='servicest'>Self Service</td>
+	<td class='servicest'>Full Service</td>
 	<td class='servicest'><a href='{% url 'pa_app:dashboard'%}'>Launch</a></td>
+	<td class='servicest'>Send</td>
+	</tr>
+    <tr>
+	<td class='servicest'>Picta S.A</td>
+	<td class='servicest'>Available</td>
+	<td class='servicest'>Productivity</td>
+	<td class='servicest'>Full Service</td>
+	<td class='servicest'><a href='{% url 'sa_app:sa'%}'>Launch</a></td>
 	<td class='servicest'>Send</td>
 	</tr>
 		<tr>
 	<td class='servicest'>Picta D.A</td>
-	<td class='servicest'>No Account</td>
+	<td class='servicest'>Available</td>
 	<td class='servicest'>I.T Support</td>
 	<td class='servicest'>On Demand</td>
 	<td class='servicest'><a href='{% url 'da_app:da'%}'>Launch</a></td>
@@ -53,28 +61,21 @@
 	</tr>
 		<tr>
 	<td class='servicest'>Picta I.P</td>
-	<td class='servicest'>No Account</td>
+	<td class='servicest'>Unavailable</td>
 	<td class='servicest'>Finance</td>
-	<td class='servicest'>Paid</td>
+	<td class='servicest'>Available launch day (10 December 2024)</td>
 	<td class='servicest'>Launch</td>
 	<td class='servicest'>Send</td>
 	</tr>
 		<tr>
 	<td class='servicest'>Picta F.P</td>
-	<td class='servicest'>No Account</td>
+	<td class='servicest'>Available</td>
 	<td class='servicest'>Finance</td>
-	<td class='servicest'>Free</td>
-	<td class='servicest'>Launch</td>
+	<td class='servicest'>Full Service</td>
+	<td class='servicest'><a href='{% url 'fp_app:fp'%}'>Launch</a></td>
 	<td class='servicest'>Send</td>
 	</tr>
-		<tr>
-	<td class='servicest'>Picta S.A</td>
-	<td class='servicest'>No Account</td>
-	<td class='servicest'>I.T Support</td>
-	<td class='servicest'>Paid</td>
-	<td class='servicest'>Launch</td>
-	<td class='servicest'>Send</td>
-	</tr>
+		
 	</table>
 	</div>
 	<div class='right'id='right'>
@@ -82,11 +83,10 @@
         Services
     </h3>
     <h6 class='link'>
-        Picta D.A<br>
-        Picta S.A<br>
-        Picta I.P<br>
-        Picta F.P<br>
-        Picta P.AS<br>
+        <a class='link'href='{% url 'da_app:da'%}'>Picta D.A</a><br>
+        <a class='link'href=''>Picta I.P</a><br>
+        <a class='link'href='{% url 'fp_app:fp'%}'>Picta F.P</a><br>
+        <a class='link'href='{% url 'pa_app:dashboard'%}'>Picta P.A</a><br>
     </h6>
 </div>
 	</div>

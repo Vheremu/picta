@@ -1,0 +1,76 @@
+{% extends 'ap/base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/ap.png'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext'>
+        <h2 class='title1'><b><a href='{% url 'ap_app:ap'%}'class=p>Views Adds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext1'>
+        <h2 class='title1'><a href='{% url 'ap_app:myadds'%}'class=p>My Adds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title1'><a href='{% url 'ap_app:myaccount'%}'class=p>My Account</a></h2></div></div>
+    </div><div class='payments'></div><div class='subbody1'>
+ 
+        
+        
+             <p>
+                
+             </p>
+            <div class='subbody'>
+            <div class='subbody2'>
+                <h3><p> <b>Picta Affiliate Program </b></p></h3>
+                </div></div><hr>
+     <div class='subbody'>
+            <div class='subbody2'>
+              
+                   <h3>
+                       <p>Helo:{{user}}</p>
+                       <p>Account Balance:${{balance.amount}}</p>
+                       <p>Transaction Cost:$5</p>
+                       {%if token%}
+                       {%if valid%}
+                       <p>Token '{{token.token}}' is valid, your account will be upgraded</p>
+                       {%else%}
+                     
+                       <p>Token '{{token}}'is invalid.</p>
+                       {%endif%}
+                       {%endif%}
+                    <p>Are you sure you want to list an Add?</p>
+                       <p><i>Our team will contact you soon after confirmation</i></p>
+                       {%if good%}
+        <form action={% url 'ap_app:listadds'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+        <input type=hidden name=tokenconfirm value={{token.token}}>
+           <input type=hidden name='token'value={{token.token}}><br><br>
+           <input type=hidden name='confirm'value=1><br><br>
+            <input type=submit name=submit class=submit value='Confirm'><br>
+                       </form> {%else%} 
+                       <p>Insufficient Funds.</p>
+                       {%endif%}
+                       <a href='{% url 'fp_app:fp'%}'class=p1><button class='submit' name='cancel'value='cancel'>Fund Acc</button></a>
+                       <a href='{% url 'ap_app:listadds'%}'class=p><input type=submit name=submit class=submit value='Cancel'></a>
+                </h3>
+              
+       
+                </div></div>
+      
+  
+    
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

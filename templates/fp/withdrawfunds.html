@@ -1,0 +1,118 @@
+{% extends 'fp/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/fp.css'%}><br>
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/fp.jpg'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext'>
+        <h2 class='title1'><b><a href='{% url 'fp_app:fp'%}'class=p>Upload Funds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext1'>
+        <h2 class='title'><a href='{% url 'fp_app:withdrawfunds'%}'class=p1>Withdraw Funds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title1'><a href='{% url 'fp_app:myaccount'%}'class=p>My Account</a></h2></div></div>
+    </div><div class='subbody1'>
+    <div class='subbody'>
+         <div class='subbody2'>
+        
+        
+             <p>
+                 <b>Picta Finance Portal ( Ecocash, ZiG, USD Nostro  and Visa/MasterCard Only)</b>
+             </p><br><hr>
+             <p>
+                 <b>Ecocash</b>
+             </p>
+             <p class=link>{{message}}</p>
+                  <form action={% url 'fp_app:withdrawfunds'%} method='POST'enctype='multipart/form-data' method='post'>
+                  {% csrf_token %}
+             <p>
+                 Enter Ecocash Number:<br>
+                 
+             </p>
+             <p>
+                 <input type='text'name='number'placeholder='+263 783 345 233'>
+             </p>
+                      <input type=hidden name=type value='Ecocash Withdrawal'>
+             <p>
+                 Select Currency:
+             </p>
+             <p>
+                 <input type='radio'name='currency'placeholder='ZiGS'value='ZiG'>ZiG ($10 ZiG per $1)<br>
+                 
+                 <input type='radio'name='currency'placeholder='ZiGS'value='USD'>USD
+                 
+             </p>
+             <p>
+                 Enter Amount:
+             </p>
+             <p>
+                 <input type='integer'name='amount'placeholder='Numbers Only'>
+             </p>
+             <p>
+                 <input class='button1' type='submit' name='' value='Withraw'>
+             </p>
+                </form>
+             <p>
+                 <b>NB</b> - Ecocash Withdrawals usually reflect in account within 30 minutes.
+             </p><br><hr>
+                <p>
+                 <b>Zipit</b>
+             </p>
+             <p class=link>{{message1}}</p>
+                  <form action={% url 'fp_app:withdrawfunds'%} method='POST'enctype='multipart/form-data' method='post'>
+                  {% csrf_token %}
+             <p>
+                 Enter Account Number:<br>
+                 
+             </p>
+             <p>
+                 <input type='text'name='number'placeholder='+263 783 345 233'>
+             </p>
+                      <input type=hidden name=type value='Zipit Withdrawal'>
+               <p>
+                   
+                 Enter Finactial Institution:<br>
+                 
+             </p>
+                 <input type='text'name='finacialinstitution'placeholder='Dawson Bank Limited'>
+            
+                      <input type=hidden name=type value='Zipit Withdrawal'>
+             <p>
+                 Select Currency:
+             </p>
+             <p>
+                 <input type='radio'name='currency'placeholder='ZiGS'value='ZiG'>ZiG ($10 ZiG per $1)<br>
+                 
+                 <input type='radio'name='currency'placeholder='ZiGS'value='USD'>USD Nostro
+                 
+             </p>
+             <p>
+                 Enter Amount:
+             </p>
+             <p>
+                 <input type='integer'name='amount'placeholder='Numbers Only'>
+             </p>
+             <p>
+                 <input class='button1' type='submit' name='' value='Withraw'>
+             </p>
+                </form>
+             <p>
+                 <b>NB</b> - Ecocash Withdrawals usually reflect in account within 30 minutes.
+             </p><br><hr>
+           
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

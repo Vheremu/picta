@@ -1,0 +1,76 @@
+{% extends 'fp/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/fp.css'%}><br>
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/fp.jpg'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext2'>
+        <h2 class='title1'><b><a href='{% url 'fp_app:fp'%}'class=p>Upload Funds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext'>
+        <h2 class='title1'><a href='{% url 'fp_app:withdrawfunds'%}'class=p>Withdraw Funds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title'><a href='{% url 'fp_app:myaccount'%}'class=p1>My Account</a></h2></div></div>
+    </div><div class='subbody1'>
+    <div class='subbody'>
+         <div class='subbody2'>
+        
+        
+             <p>
+                 <b>Picta Finance Portal ( Ecocash, ZiG, USD Nostro  and Visa/MasterCard Only)</b>
+             </p><br><hr>
+               <p class='details'>
+                 <b><br>
+                     Username : {{balance.account}}<br>
+                     Account Balance : ${{balance.amount}}
+                 </b>
+             </p><br><hr>
+             <p>
+                 <b>
+                     Transaction History
+                 </b>
+             </p>
+             {%if transaction%}
+                         <table >
+	<thead class='services' text-align='center'>
+	<th>Transaction ID:</th>
+	<th >Username:</th>
+	<th >Transacion Type:</th>
+	<th >Amount:</th>
+	<th >Date:</th>
+	<th>Reference:</th>
+    <th>Staffid:</th>
+	</thead>
+    {%for trans in transaction%}
+ <tr>
+	<td class='servicest'>{{trans.transactionid}}</td>
+	<td class='servicest'>{{trans.account}}</td>
+	<td class='servicest'>{{trans.transactiontype}}</td>
+	<td class='servicest'>{{trans.amount}}</td>
+	<td class='servicest'><a href='{% url 'pa_app:dashboard'%}'>{{trans.date}}</a></td>
+	<td class='servicest'>{{trans.reference}}</td>
+     <td class='servicest'>{{trans.staffid}}</td>
+	</tr>
+    
+    {%endfor%}</table>
+    {%else%}
+    <h2>N/A</h2>
+    {%endif%}
+             <br><hr>
+       
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

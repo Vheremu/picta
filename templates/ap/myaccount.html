@@ -1,0 +1,122 @@
+{% extends 'ap/base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/ap.png'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext'>
+        <h2 class='title1'><b><a href='{% url 'ap_app:ap'%}'class=p>Views Adds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext1'>
+        <h2 class='title1'><a href='{% url 'ap_app:myadds'%}'class=p>My Adds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title'><a href='{% url 'ap_app:myaccount'%}'class=p1>My Account</a></h2></div></div>
+    </div><div class='payments'><a href='{% url 'ap_app:listadds'%}'class='aplink'>Click here to list your Adds</a></div><div class='subbody1'>
+    <div class='subbody'>
+         <div class='subbody2'>
+        
+        
+             <p>
+                 <b>Picta Affiliate Program </b>
+             </p>
+             <h1 class = 'message'font-color=green>
+                 {%if message%}
+                 <p>
+                 <br>{{message}}
+             </p>
+             </h1>{%endif%}
+             <br></div><hr>
+        {%if letter%}
+        <div class='subbody2'>
+        
+        
+             <p>
+                 <b>Download Invitation Letter </b>
+             </p><br><br>
+            <img class='invitation' src='http://127.0.0.1:8000/static/invitationletters/m3.png'>
+             <br></div><hr>
+         {%endif%}
+      
+        <div class='subbody'>
+            <div class='subbody2'>
+                {%if myaccount%}
+                <h5><p>Hello : {{myaccount.account.username}}</p>
+                <p>Rank : {{myaccount.rank}}</p>
+                <p>Report To : {{reportto.reportto}}</p>
+                <p>Recruited By : {{myaccount.recruitedby}}</p>
+                <p>Recruitment Date : {{myaccount.datecreated}}</p>
+                <p>Sales : {{sales}}</p>
+                <p>My Recruits : {{recruits}}</p>
+                <p>Branch Size : {{bsize}}</p>
+                <p>Branch Sales : {{bsales}}</p>
+                </h5>
+                
+                {%else%}
+                <p>You need to buy an add to be a member</p>
+                
+                <h3><p>Rank : N/A</p>
+                <p>Recruited By : N/A</p>
+                <p>Recruitment Date : N/A</p>
+                <p>Sales : N/A</p>
+                 <p>My Recruits : N/A</p>
+                <p>Branch Size :N/Ap>
+                <p>Branch Sales : N/A</p>
+                </h3>
+                {%endif%}
+            </div><br>
+            <div class='subbody2'>
+                     <form action={% url 'ap_app:myaccount'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+                         
+                         {%if myaccount%}
+                <h5>
+                   <p>
+                        Generate invitation letter:<br><br>
+                    </p>
+               
+                
+               <p>
+                Enter Your First Name:<br>
+                </p>
+                <input type='text' name=firstname placeholder='First name only'><br>
+             <p>
+                    Enter Your Surname:
+                </p>
+                <input type='text' name=surname placeholder='Surname name only'> 
+                    <p>
+                    Enter Your House Address:
+                </p>
+                <input type='text' name=houseaddress placeholder='Street+house number only'>
+                    <p>
+                    Enter Your Town/City Address:
+                </p>
+                <input type='text' name=townaddress placeholder='Town+City only'>
+                      <p>
+                    Enter Name of Person Invited:
+                </p>
+                <input type='text' name=invitee placeholder='First name only'>
+                      <p>
+                    Enter Surname of Person Invited:
+                </p>
+                <input type='text' name=inviteesurname placeholder='Surname only'><br><br>
+                    <input type=submit class='submit1' value='Generate'>
+                
+                </h5></form>{%endif%}
+            </div>
+        </div>
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

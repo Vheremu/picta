@@ -51,8 +51,7 @@ function m1(){
 <h5 class='t'> <button class='dailytasksbutton' onclick="dailytasksbuttonclick()">Automate Task</button></h5>
 <h5 class='t'><button class='weeklytasksbutton' onclick="weeklytasksbuttonclick()">Outsource Task</button></h5>
 <h5 class='t'> <button class='monthlytasksbutton' onclick="monthlytasksbuttonclick()">Source Task</button></h5>
-<h5 class='t'>Source Tasks</h5>
-<h class='t'5>Outsource Tasks</h5>
+
         </div>
         <div class='topbuffer'>
         </div>
@@ -61,7 +60,10 @@ function m1(){
     <div class='subbodybody'>
         <div class='center'id='body'><h1>
     <p class='i' >
-        Confirm Digitalizing Task</p></h1>
+        Confirm Digitalizing Task</p>
+        <p class='i'>Hello:{{user}}</p>
+    
+        </h1>
 <div class='bodytext'><p><h2><b>Are You Sure You Want To Digitalize?</b></h2></p>
     
             <p><b>Task Name : {{task.name}}</b></p>
@@ -70,16 +72,16 @@ function m1(){
      <p><b>Task Time : {{task.time}} minutes (average)</b></p>
      <p><b>Task Cost : ${{task.cost}} (average)</b></p>
      <p><b>Task Nature : {{task.nature}}</b></p>
-            <form><input type='hidden'name='taskid'id='taskid'value={{task.taskid}}></form><button class='automatebutton'onclick='confirmdigitalize(taskid.value)'>Digitalize</button><button class='automatebutton'onclick='canceldigitalize()'>Cancel</button>
+            <form><input type='hidden'name='taskid'id='taskid'value={{task.taskid}}></form><button class='addtaskbutton'onclick='confirmdigitalize(taskid.value)'>Digitalize</button><button class='addtaskbutton'onclick='canceldigitalize()'>Cancel</button>
     </div>
         
   
-        <button onclick='st()'>Test</button>
+    
       
 
-    </div>
-    </div>
-</div>
+    </div><br>
+    </div><br>
+</div><br>
 
-</div>
+</div><br>
 {% endblock %}

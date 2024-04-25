@@ -33,14 +33,20 @@
             {% for ticket in tickets%}
             <p>Task Name:{{ticket.task.name}} <br>Request:{{ticket.request}}
             <br>Status:{{ticket.status}}
-                <form><input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
-                    <button class='button'onclick='bookappointment(ticket)'>Book Appointment</button>
+            <br><br>Enter Discount Token :
+                <form>
+                    <input type=text placeholder='Token Here'name='token'id='token'>(Optional)<br><br>
+                    <input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
+                    <button class='menuitem'onclick='bookappointment(ticket,token.value)'>Book Appointment</button>
             </form>
             </p><hr>
             
             {%endfor%}
             {%else%}
-            <p>pl</p>
+        <p><h1>You have no tickets </h1></p>
+        
+            <p><b>NB</b>-Picta DA only supports Picta PA users and all tickets are logged from Picta PA.</p>
+    <p><a href='http://127.0.0.1:8000/pa/myworkday'><button class='menuitem'onclick='http://127.0.0.1:8000/fp'>Picta P.A</button></p>
             {%endif%}
         </div>
     </div>

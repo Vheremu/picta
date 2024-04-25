@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import path,include
 app_name = 'picta_app'
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("pictakeyadmin/", admin.site.urls),
     path('',include('website.urls'),name='website'),
     path('accounts/',include('accounts.urls'),name='accounts'),
     path('pa/',include('pa.urls'),name='pa'),
     path('da/',include('da.urls'),name='da'),
+    path('ap/',include('ap.urls'),name='ap'),
+    path('fp/',include('fp.urls'),name='fp'),
+    path('sa/',include('sa.urls'),name='sa'),
 ]

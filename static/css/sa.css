@@ -1,0 +1,213 @@
+#topmenu{
+    
+    text-align: center;
+    width:100%;
+    margin: auto;
+    padding: 30px;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+.td2{
+	color:red;
+}
+.services{
+	font-size:20px;
+	background-color:#c7c7c7;
+	height:50px;
+	color:white;
+	border:relative;
+	text-align:center;
+}
+.servicest{
+	height:20px;
+	color:7f7f45;
+    font-style: normal;
+    font-variant: small-caps;
+	
+}
+#left{
+    
+    width: 20%;
+     margin: auto;
+    padding: 10px;
+    background-color: #ebebcf;
+}
+#body{
+    
+    width: 100%;
+    text-align-last: left;
+    margin: auto;
+    padding: 50px;
+    padding-top: 0px;
+    border-width: 1px;
+    background-color: #dedece;
+}
+
+#right{
+    
+    width: 20%;
+     margin: auto;
+    padding: 10px;
+    background-color: #ebebcf;
+}
+.footer{
+    background-color: #ebebcf;
+    display:flex;
+    padding:50px
+}
+.body{
+    background-color:dimgray;
+}
+.main_container{
+    display:flex;
+}
+.button1{
+    background-color: #7f7f45;
+    width:80;
+    height: 50;
+    text-align: center;
+    color:aliceblue;
+    padding:13px;
+}
+.button2{
+    background-color: #7f7f45;
+    width:80;
+    height: 60;
+    text-align: center;
+    color:aliceblue;
+    padding:20px;
+}
+.footerleft{
+    flex-grow:0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.footercenter{
+    flex-grow: 0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.footerright{
+    flex-grow: 0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.left{
+    flex:0 0 150px;
+    text-align: center;
+}
+.right{
+    flex:0 0 150px;
+    text-align: center;
+}
+.center{
+    flex-grow:1;
+}
+.introd{
+    background-color: white;
+      display:flex;
+}
+.img1{
+  flex-grow: 1;
+}
+.table{
+    display:flex;
+    background-color: #ebebcf;
+}
+.brandtext{
+    font-family:serif;
+    font-style:normal;
+    color: #7f7f45;
+     font-size: 30;
+
+    text-decoration: overline;
+}
+.title{
+    padding: 10px;
+    font-family:serif;
+    font-style:normal;
+    color: white;
+   
+  
+}
+
+td{
+    background-color:#ebebcf;
+    height: 40px;
+    width: 90px;
+    font-size: 15;
+    font-style: oblique;
+    text-align: center;
+}
+.oneoption{
+    color:white; 
+}
+#td1{
+    color:white;
+}
+.servicename{
+    background-color: #c8c894;
+    padding: 10px;
+    border: dotted;
+    border-color: aliceblue;
+}
+.sa{
+   
+    background-color: white;
+}
+.br{
+    display: flex;
+}
+.sabtn{
+    background-color: black;
+    color:white;
+    height:40px;
+    width:80px;
+}
+.bt{
+    flex-grow: 0.5;
+    padding: 10px
+    align:center;
+     padding: 20px;
+}
+
+.by{
+    flex-grow: 0.5;
+    padding: 10px;
+}
+.block{
+    height:50px;
+    background-color: white;
+}
+.samenu{
+    height:50px;
+    background-color:dimgrey;
+    color:white;
+    font-size:40px;
+    text-align: center;
+    font-style: initial;
+}
+.link{
+    color:red;
+    font-family: monospace;
+    font-size:15px;
+}
+.hellotext{
+    color:white;
+    font-size:70;
+    font-style: oblique;
+    text-align: center;
+    
+    
+}
+.logo{
+    height:180px;
+}
+.ico{
+    height:15px
+}
+.logo{
+    height:15px;
+    width:15px;
+    padding:10px;
+}

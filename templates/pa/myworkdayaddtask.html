@@ -51,8 +51,7 @@ function m1(){
 <h5 class='t'> <button class='dailytasksbutton' onclick="dailytasksbuttonclick()">Automate Task</button></h5>
 <h5 class='t'> <button class='weeklytasksbutton' onclick="weeklytasksbuttonclick()">Outsource Task</button></h5>
 <h5 class='t'> <button class='monthlytasksbutton' onclick="monthlytasksbuttonclick()">Source Task</button></h5>
-<h5 class='t'>Source Tasks</h5>
-<h class='t'5>Outsource Tasks</h5>
+
         </div>
         <div class='topbuffer'>
         </div>
@@ -62,7 +61,26 @@ function m1(){
         <div class='center'id='body'><h1>
     <p class='i' id='i'>
         Add Task</p></h1>{%if added%}<p class=link>{{added}}</p>{%endif%}
+            <div class='bodytext'>
+                  <p > <form  action={% url 'pa_app:myworkday'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+                <input type='hidden' name='autocomplete' value='1' >
+                 <input type='submit' class='addtaskbutton'name='' value='+Autocom*'>
+                </form>
+                {% if autocomplete %}
+                <p>Dont be so lazy please fill in the form.
+                    <form  action={% url 'pa_app:myworkday'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+                <input type='hidden' name='autocomplet' value='1' >
+                 <input type='submit' class='addtaskbutton'name='' value='x Autocom*'>
+                </form>
+                {%endif%}
+                    
+                </p>
+            </div>
+            
          <div class='bodytext'>
+           
                <form  action={% url 'pa_app:myworkday'%} method='POST'enctype='multipart/form-data' method='post'>
         {% csrf_token %}
         <h1 class='title'>

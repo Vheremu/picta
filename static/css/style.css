@@ -103,7 +103,13 @@
 .center{
     flex-grow:1;
 }
-
+.introd{
+    background-color: white;
+    display:flex;
+}
+.img1{
+    flex-grow: 1;
+    resize: inherit;
 }
 .table{
     display:flex;
@@ -113,9 +119,7 @@
     font-family:serif;
     font-style:normal;
     color: #7f7f45;
-     font-size: 30;
-    text-emphasis-style:triangle;
-    text-emphasis-color: darkred;
+    font-size: 30;
     text-decoration: overline;
 }
 .title{
@@ -126,6 +130,7 @@
    
   
 }
+
 td{
     background-color:#ebebcf;
     height: 40px;
@@ -146,8 +151,21 @@ td{
     border: dotted;
     border-color: aliceblue;
 }
+.block{
+    height:50px;
+    background-color: #c8c894;
+}
+.br{
+    display: flex;
+}
+.by{
+    flex-grow: 0.2;
+    padding: 10px;
+}
 .link{
     color:red;
+    font-family: monospace;
+    font-size:15px;
 }
 .hellotext{
     color:white;
@@ -157,4 +175,9 @@ td{
     
     
 }
+.logo{
+    height:180px;
+}
+.ico{
+    height:15px
 }

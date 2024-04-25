@@ -9,17 +9,17 @@
 <body><br>
 
 <table class='table'>
-   <td id='td1'> <a href='{% url 'website_app:index'%}'><img src='http://127.0.0.1:8000/static/images/home1.jpg'alt='ohh noo its john cena '/><br>Home</a></td>
-    <td class='td2'><a href='{% url 'website_app:services'%}'><img class='td2'src='http://127.0.0.1:8000/static/images/servicesicon.jpg'alt='ohh noo its john cena '/><br>Services</a></td>
-   <td class='td3'> <a href='{% url 'website_app:feedback'%}'><img src='http://127.0.0.1:8000/static/images/feedback.jpg'alt='ohh noo its john cena '/>Feedback</a></td>
+   <td id='td1'> <a class=link href='{% url 'website_app:index'%}'><img class='ico 'src='http://127.0.0.1:8000/static/images/home1.jpg'alt='ohh noo its john cena '/>Home</a></td>
+    <td class='td2'><a class=link  href='{% url 'website_app:services'%}'><img class='ico'src='http://127.0.0.1:8000/static/images/servicesicon.jpg'alt='ohh noo its john cena '/>Services</a></td>
+   <td class='td3'> <a class=link  href='{% url 'website_app:feedback'%}'><img class='ico 'src='http://127.0.0.1:8000/static/images/feedback.jpg'alt='ohh noo its john cena '/>Feedback</a></td>
     
-    <td class='td4'><a href='{% url 'website_app:contactus'%}'><img src='http://127.0.0.1:8000/static/images/contactus.jpg'alt='ohh noo its john cena '/><br>Contact Us</a></td>
-   <td class='td5'><a href='{% url 'website_app:about'%}'><img src='http://127.0.0.1:8000/static/images/aboutus2.jpg'alt='ohh noo its john cena '/> <br>About Us</a></td>
+    <td class='td4'><a class=link  href='{% url 'website_app:contactus'%}'><img class='ico 'src='http://127.0.0.1:8000/static/images/contactus.jpg'alt='ohh noo its john cena '/>ContactUs</a></td>
+   <td class='td5'><a class=link  href='{% url 'website_app:about'%}'><img class='ico 'src='http://127.0.0.1:8000/static/images/aboutus2.jpg'alt='ohh noo its john cena '/>AboutUs</a></td>
     {{user.name}}
     {% if user.is_authenticated %}
-            <td class='td6'><a href='{% url 'accounts_app:user_logout'%}'><img src='http://127.0.0.1:8000/static/images/logo5.jpg'alt='ohh noo its john cena '/>Hello:{{user.username}} Logout</a></td>
+            <td class='td6'><a class=link   href='{% url 'accounts_app:user_logout'%}'><img class='ico 'src='http://127.0.0.1:8000/static/images/logo5.jpg'alt='ohh noo its john cena '/>Hello:{{user.username}} Logout</a></td>
           {% else %}
-            <td class='td7'><a href='{% url 'accounts_app:user_login'%}'><img src='http://127.0.0.1:8000/static/images/logo6.jpg'alt='ohh noo its john cena '/><br>login</a></td>
+            <td class='td7'><a class=link href='{% url 'accounts_app:user_login'%}'><img src='http://127.0.0.1:8000/static/images/logo6.jpg'alt='ohh noo its john cena '/><br>login</a></td>
           {% endif %}
 </table>{{user.profile_pics}}
 </body>
@@ -29,7 +29,24 @@
     <br><br></div>
 <div class='footer'>
     <div class=footerleft><h5>copyright Picta 2024</h5></div>
-    <div class='footercenter'>Quick Links</div>
-    <div class='footerright'>footerright</div>
+    <div class='footercenter'><b>Our Services</b>
+        <p>	<td class='servicest'><a class=link href='{% url 'pa_app:dashboard'%}'>Picta P.A (Personal Assistant)</a>
+            <br><a class=link href='{% url 'sa_app:sa'%}'>Picta S.A (Seo A.I)</a>
+            <br><a class=link  href='{% url 'da_app:da'%}'>Picta D.A (Digitalisation and Automation)</a>
+            <br><a class=link  href='{% url 'fp_app:fp'%}'>Picta F.P (Picta Finance Portal)</a>
+            <br>Picta I.P (Picta Investors Portal) Not Available until 10 December 2024(Official Picta Launch Date)
+            
+        </p>
+        
+    </div>
+    <div class='footerright'><b>Quick Links</b>
+    <p>	<td class='servicest'>
+            <a class=link  class=link  href='{% url 'website_app:index'%}'>Home</a>
+            <br><a class=link  href='{% url 'website_app:services'%}'>Services</a>
+        <br><a class=link  href='{% url 'website_app:feedback'%}'>Feedback</a>
+            <br><a class=link  href='{% url 'website_app:contactus'%}'>Contact Us</a>
+            <br><a class=link  href='{% url 'website_app:about'%}'>About Us</a>
+        </p>
+    </div>
 </div>
 </html>

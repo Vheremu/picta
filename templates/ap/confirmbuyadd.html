@@ -1,0 +1,83 @@
+{% extends 'ap/base.html' %}
+{% load static %}
+
+{% block body_block %}
+ <link rel='stylesheet'href={% static 'css/ap.css'%}>
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/ap.png'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext'>
+        <h2 class='title'><b><a href='{% url 'ap_app:ap'%}'class=p1>Views Adds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext1'>
+        <h2 class='title1'><a href='{% url 'ap_app:ap'%}'class=p>My Adds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title1'><a href='{% url 'ap_app:ap'%}'class=p>My Account</a></h2></div></div>
+    </div><div class='payments'><a href='{% url 'ap_app:listadds'%}'class='aplink'>Click here to list your Adds</a></div><div class='subbody1'>
+    <div class='subbody'>
+         <div class='subbody2'>
+        
+        
+             <p>
+                 <b>Picta Affiliate Program ( Invitation membership Only)</b>
+             </p><br></div><hr>
+        {%if adds%}
+       
+        <div class='subbody4'> <p>
+                 <b>Add by: {{adds.company}}</b>
+             </p></div>
+             <div class='subbody3'>
+            
+                  <img class='img1'src='http://127.0.0.1:8000/static/images/promo.png'>
+             </div>
+        <div class='subbody5'>
+             <p>
+                 <b><u>NB</b></u> - Cost: ${{adds.cost}} .<br>
+                 <b><u>NB</b></u> - Payout: ${{adds.payout}} per sale.<br>
+            
+             
+                 Hello: {{user}}<br>
+           
+             Account Balance: ${{balance.amount}}<br>
+                 Transaction Cosst:${{adds.cost}}<br></p>
+             {%if valid%}
+            <p>{{token.token}} is valid, your account will be upgraded</p>
+            {%endif%}
+         <h2>Are you sure you want to Buy ?</h2>
+              
+          <h3>   <p>       {%if good%}
+             <form action={% url 'ap_app:ap'%} method='POST'enctype='multipart/form-data' method='post'>
+        {% csrf_token %}
+                 <input type=hidden name=token value={{token.token}}>
+                    <input type=hidden name=confirm value={{adds.addid}}>
+                    <input class='submit' type='submit'value='Buy Add'>
+                 </form>
+          <a href='{% url 'ap_app:myadds'%}'class=p1><button class='submit' name='cancel'value='cancel'>Cancel</button></a>
+            {%else%}
+              <a href='{% url 'fp_app:fp'%}'class=p1><button class='submit' name='cancel'value='cancel'>Fund Acc</button></a>
+            <a href='{% url 'ap_app:myaccount'%}'class=p1><button class='submit' name='cancel'value='cancel'>Cancel</button></a>
+            {%endif%}
+    </p></h3>
+    </div><hr>
+     <div class=subbody2>
+         
+        
+
+        {%endif%}
+       
+    </div>
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

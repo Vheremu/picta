@@ -1,0 +1,224 @@
+
+
+
+.link{
+    color:red;
+    font-family: monospace;
+    font-size:15px;
+}
+.aplink{
+    color: white;
+}
+
+.subbodybody{
+    background-color: #77775b;
+    flex-grow: 0.95;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+    padding: 10px;
+}
+.menubutton,.addtaskbutton,.alltasksbutton,.dailytasksbutton,.weeklytasksbutton,.monthlytasksbutton{
+    color:#d4d59f;
+    height: 40px;
+    width: 80px;
+    background-color: 4c4c3a;
+}
+
+.i{
+    background-color: 77775b;
+    color:white;
+}
+
+.frequency{
+    border-style:double;
+    border-color: white;
+    padding:20px;
+}
+.invitation{
+    border-style: dotted;
+    border-radius: 10px;
+    flex-grow: 1;}
+
+
+.link{
+    color:red;
+}
+
+
+
+.servicest{
+	height:20px;
+	color:7f7f45;
+    font-style: normal;
+    font-variant: small-caps;
+	
+}
+.footer{
+    background-color: #ebebcf;
+    display:flex;
+    padding:50px
+}
+.footerleft{
+    flex-grow:0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.footercenter{
+    flex-grow: 0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.footerright{
+    flex-grow: 0.5;
+     background-color: #dedece;
+    padding:20px;
+}
+.payments{
+    background-color: #453c11;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-style: oblique;
+}
+.brandtext{
+    font-family:serif;
+    font-style:normal;
+    color: #7f7f45;
+     font-size: 30;
+
+    text-decoration: overline;
+}
+.td2{
+	color:red;
+}
+.table{
+    display:flex;
+    background-color: #ebebcf;
+}
+td{
+    background-color:#ebebcf;
+    height: 40px;
+    width: 90px;
+    font-size: 15;
+    font-style: oblique;
+    text-align: center;
+}
+#td1{
+    color:white;
+}
+.ico{
+    height:15px
+}
+.topdiv{
+    background-color: #453c11;
+    height:100px;
+}
+.logo{
+    height:10px;
+    padding:20px;
+}
+.title{
+    font-size:35px;
+}
+.body{background-color: #857d57;
+}
+.menu{background-color: #9f9874;
+    padding: 20px;
+    flex-grow: 1;
+  
+}
+.p{
+    color:white;
+}
+.p1{
+    color:black;
+}
+.details{
+    font-size:20px;
+}
+hr{
+    color:#453c11;
+    height:10px;
+    background-color:#9f9874;
+}
+.button1{
+    background-color: #453c11;
+    color:white;
+    height:60px;
+    width: 70px;
+}
+.success{
+    color:mediumvioletred;
+    font-size:20px;
+}
+.success1{
+    color:limegreen;
+    font-size:20px;
+}
+.d1{
+      display:flex;
+    background-color: #857d57;
+    padding:20px;
+}
+.menutext,.menutext1,.menutext2{background-color: #e0d8b0;
+padding: 5px;
+flex-grow: 1;
+border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+}
+.submit{
+    background-color:  #453c11;
+    color:white;
+    height: 40px;
+}
+.submit1{
+    background-color:  #453c11;
+    color:white;
+    height: 40px;
+}
+.subbody1{background-color: #857d57;
+    padding:20px;
+}
+.subbody{
+    background-color: #999065;
+    padding:20px;
+}
+.subbody2{
+    background-color: #e0d8b0;
+    padding:20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+}
+.message{
+    color:green
+}
+.img1{
+  flex-grow: 1;
+    padding:10px;
+    padding-bottom: 2px;
+}
+.subbody3{
+    display:flex;
+}
+.subbody2{
+    display:flex;
+
+}
+.subbody4{
+    background-color: #e0d8b0;
+    padding:20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px;
+}
+.subbody5{
+    background-color: #e0d8b0;
+    padding:20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}

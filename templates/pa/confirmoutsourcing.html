@@ -1,0 +1,144 @@
+{% extends 'pa/base.html' %}
+{% load static %}
+
+<script>
+    
+function m1(){
+  $.ajax({
+      url: "{% url 'pa_app:myworkday' %}",
+      type: "POST",
+      data: {
+          action: 'menubuttonclick', 
+          csrfmiddlewaretoken: "{{ csrf_token }}"
+      },
+      success: function(response) {
+          // Display the data in an alert
+          console.log(response);
+      }
+  });
+}m1();
+    var data = {
+          action: 'menubuttonclick', 
+          csrfmiddlewaretoken: "{{ csrf_token }}",
+      };
+    function menubuttonclick1(){
+    console.log('menu button was clicked');
+    menu='hello';
+    
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", 'http://127.0.0.1:8000/pa/myworkday', false);
+    ajax.send(data);
+    console.log(ajax.responseText);
+}
+</script>
+
+
+{% block body_block %}
+
+
+<div class='body'>
+<div class='menu'><img align='left' id='logo' src='http://127.0.0.1:8000/static/images/logopa.jpg'><p class='myworkday'>My Workday</p></div>
+<div class='subbody'>
+    <div class='leftmenu'>
+        <div class='topbuffer'>
+        </div>
+        <div class='leftmenutext'>
+            <h2 class='t'>
+                 <button class='menubutton' onclick="menubuttonclick()">Menu</button>
+            </h2>
+<h5 class='t'> <button class='addtaskbutton' onclick="addtaskbuttonclick()">Add Task</button> </h5>
+<h5 class='t'> <button class='alltasksbutton' onclick="alltasksbuttonclick()">Digitalize Task</button></h5>
+<h5 class='t'> <button class='dailytasksbutton' onclick="dailytasksbuttonclick()">Automate Task</button></h5>
+<h5 class='t'><button class='weeklytasksbutton' onclick="weeklytasksbuttonclick()">Outsource Task</button></h5>
+<h5 class='t'> <button class='monthlytasksbutton' onclick="monthlytasksbuttonclick()">Source Task</button></h5>
+
+        </div>
+        <div class='topbuffer'>
+        </div>
+        
+    </div>
+    <div class='subbodybody'>
+        <div class='center'id='body'>
+    <p class='i' >
+        Confirm Outsourcing Task</p><div class=bodytext><h1>
+            <p>Hello:{{user}}</p>  </h1>
+            <p class='bodytext'>Account Balance : ${{balance.amount}}.</p>
+            {%if allowed%}
+            
+            {%if token%}
+            {%if discount%}
+                 <p class='bodytext'><b>NB -</b>Token '{{token}}' is valid.</p> 
+
+            <p class='bodytext'><b>NB -</b>Transaction Discount: $2 .</p> </div>
+            <p class='bodytext'><b>NB -</b>Transaction Cost: $18 .</p> </div>
+           {%else%}
+             <p class='bodytext'><b>NB -</b>Token '{{token}}' is invalid.</p> 
+
+         <p class='bodytext'><b>NB -</b>Transaction Cost: $20 .</p> </div>
+            {%endif%}
+    {%else%}
+    <p class='bodytext'><b>NB -</b>Transaction Cost: $20 .</p> </div>
+    {%endif%}
+        
+            <div class='bodytext'><p><h2><b>Are You Sure You Want To Out Source:</b></h2></p>
+    
+            <p><b>Task Name : {{task.name}}</b></p>
+     <p><b>Task Description : {{task.description}}</b></p>
+     <p><b>Task Frequency : {{task.frequency}}</b></p>
+     <p><b>Task Time : {{task.time}} minutes (average)</b></p>
+     <p><b>Task Cost : ${{task.cost}} (average)</b></p>
+     <p><b>Task Nature : {{task.nature}}</b></p>
+    {%if token%}
+    {%if discount%}
+     <form>
+         <input type=text name='taskid' id='taskid'value={{task.taskid}}>
+          <input type=text name='token'id='token'value={{token}}>
+   <button class='addtaskbutton'onclick='confirmoutsource(taskid.value,token.value)'>Out Source</button> </form><br><br>
+    <button class='addtaskbutton'onclick='canceloutsource()'>Cancel</button>
+    {%else%}
+     <form><input type='hidden'name='taskid'value={{task.taskid}}>
+    <button class='addtaskbutton'onclick='confirmoutsource(taskid.value)'>Out Source</button><br><br>
+    <button class='addtaskbutton'onclick='canceloutsource()'>Cancel</button></form>
+    {%endif%}
+    {%else%}
+    <form>
+         <input type='hidden'name='taskid'value={{task.taskid}}>
+<button class='addtaskbutton'onclick='confirmoutsource(taskid.value)'>Out Source</button>    </form><br><br>
+    <button class='addtaskbutton'onclick='canceloutsource()'>Cancel</button>
+    {%endif%}
+           
+    </div>
+
+            {%else%}
+
+        <p class=bodytext>Transaction Cost: $20. </p>
+            {%if token%}
+    {%if discount%}
+<p class=bodytext>Your Balance is less than $18. Insufficient Funds To Outsource</p>
+     <p class='bodytext'><b>NB -</b>Token '{{token}}' is valid.</p> 
+{%else%}
+<p class=bodytext>Your Balance is less than $20. Insufficient Funds To Outsource</p>
+ <p class='bodytext'><b>NB -</b>Token '{{token}}' is invalid.</p>
+{%endif%}
+{%endif%}
+              <div class='bodytext'><p><h2><b>Are You Sure You Want To Out Source:</b></h2></p>
+    
+            <p><b>Task Name : {{task.name}}</b></p>
+     <p><b>Task Description : {{task.description}}</b></p>
+     <p><b>Task Frequency : {{task.frequency}}</b></p>
+     <p><b>Task Time : {{task.time}} minutes (average)</b></p>
+     <p><b>Task Cost : ${{task.cost}} (average)</b></p>
+        <p><b>Task Nature : {{task.nature}}</b</div></b></p></div></div>
+        
+          <a href='http://127.0.0.1:8000/fp'><button class='addtaskbutton'onclick='http://127.0.0.1:8000/fp'>Fund Account</button></a><br><br>
+    <button class='addtaskbutton'onclick='canceloutsource()'>Cancel</button>
+            {%endif%}
+         
+
+
+    </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

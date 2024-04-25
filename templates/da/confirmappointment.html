@@ -30,13 +30,77 @@
         <div class='contentdiv'>
             <p class='contenttitle'>Tickets</p>
             {%if ticket%}
-            <h1>Are you sure you want to book an appointment?</h1>
+            <h3>Hello {{user}}</h3>
+            <h3>Account Balance: $ {{balance.amount}}</h3>
+            <h3>Transaction Cost: $20</h3>
+            
+            {%if allowed%}
+
+             <h1>Are you sure you want to book an appointment?</h1>
+            <p>Task Name:{{ticket.task.name}} <br>Request:{{ticket.request}}
+            <br>Status:{{ticket.status}}
+                {%if token%}
+                {%if valid%}
+                 <p>Token '{{token}}' is valid</p>
+        <p>Discount Transaction Cost:$18 </p>
+                <form><input type='hidden'value='{{token}}'id='token1'name='token1'>
+                    <input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
+                    <button class='menuitem'onclick='confirmbookappointment(ticket,token1.value)'>Book Appointment</button>
+                      <button class='menuitem'onclick='ticketsbuttonclick()'>Cancel</button>
+            </form>
+            {%else%}
+             <p>Token '{{token}}' is invalid</p>
+       
+                  <form><input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
+                    <button class='menuitem'onclick='confirmbookappointment(ticket)'>Book Appointment</button>
+                      <button class='menuitem'onclick='ticketsbuttonclick()'>Cancel</button>
+            {%endif%}
+            {%else%}
+                  <form><input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
+                    <button class='menuitem'onclick='confirmbookappointment(ticket)'>Book Appointment</button>
+                      <button class='menuitem'onclick='ticketsbuttonclick()'>Cancel</button>
+            {%endif%}
+                      
+                 
+            
+            </p>
+            {%else%}
+        {%if token%}
+        {%if valid%}
+        <p>Token '{{token}}' is valid</p>
+        <p>Discount Transaction Cost:$18 </p>
+            <p>You have insufficient funds</p>
+             <a href='http://127.0.0.1:8000/fp'><button class='menuitem'onclick='http://127.0.0.1:8000/fp'>Fund Account</button></a>
+             <h1>Are you sure you want to book an appointment?</h1>
             <p>Task Name:{{ticket.task.name}} <br>Request:{{ticket.request}}
             <br>Status:{{ticket.status}}
                 <form><input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
-                    <button class='button'onclick='confirmbookappointment(ticket)'>Book Appointment</button>
+                    <button class='menuitem'onclick='ticketsbuttonclick()'>Cancel</button>
             </form>
-            </p><hr>
+        {%else%}
+          <p>Token '{{token}}' is invalid</p>
+     
+            <p>You have insufficient funds</p>
+             <a href='http://127.0.0.1:8000/fp'><button class='menuitem'onclick='http://127.0.0.1:8000/fp'>Fund Account</button></a>
+             <h1>Are you sure you want to book an appointment?</h1>
+            <p>Task Name:{{ticket.task.name}} <br>Request:{{ticket.request}}
+            <br>Status:{{ticket.status}}
+                <form><input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
+                    <button class='menuitem'onclick='ticketsbuttonclick()'>Cancel</button>
+        {%endif%}
+           {%else%}
+            
+     
+            <p>You have insufficient funds</p>
+             <a href='http://127.0.0.1:8000/fp'><button class='menuitem'onclick='http://127.0.0.1:8000/fp'>Fund Account</button></a>
+             <h1>Are you sure you want to book an appointment?</h1>
+            <p>Task Name:{{ticket.task.name}} <br>Request:{{ticket.request}}
+            <br>Status:{{ticket.status}}
+                <form><input type='hidden'value='{{ticket.ticketid}}'id='ticket'>
+                    <button class='menuitem'onclick='ticketsbuttonclick()'>Cancel</button>
+                    {%endif%}
+                    {%endif%}
+           <hr>
             
       
 

@@ -1,0 +1,59 @@
+{% extends 'ap/base.html' %}
+{% load static %}
+{% block body_block %}
+
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/ap.png'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext'>
+        <h2 class='title1'><b><a href='{% url 'ap_app:ap'%}'class=p>Views Adds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext1'>
+        <h2 class='title'><a href='{% url 'ap_app:myadds'%}'class=p1>My Adds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title1'><a href='{% url 'ap_app:myaccount'%}'class=p>My Account</a></h2></div></div>
+    </div><div class='payments'><a href='{% url 'ap_app:listadds'%}'class='aplink'>Click here to list your Adds</a></div><div class='subbody1'>
+    <div class='subbody'>
+         <div class='subbody2'>
+             <p>
+                 <b>Picta Affiliate Program </b>
+             </p><br></div><hr>
+        
+        {%if adds%}
+        {%for add in adds%}
+     
+         <p><div class='subbody4'>
+                 <b>Add by: {{add.company}}</b>
+             </p></div>
+             <div class='subbody3'>
+            
+                  <img class='img1'src={{add.image.url}}>
+             </div>
+        <div class='subbody5'>
+             <p>
+                  - Cost: ${{add.cost}} .<br>
+                  - Payout: ${{add.payout}} per sale.<br>
+                 
+                 <b>NB</b>: Download Add and Share to make money!
+                 <input type="hidden" name='addid'value={{add.addid}}>
+            </p><br></div><hr> 
+        
+        
+        {%endfor%}
+        {%endif%}
+       
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}

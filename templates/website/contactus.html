@@ -5,23 +5,23 @@
 <div class='body'>
 <h1><p  class=title>Contact Us</p></h1>
 <div id='topmenu'>
-    <img src='http://127.0.0.1:8000/static/images/logo3.jpg'alt='logo not found'/>
+    <img class='logo' src='http://127.0.0.1:8000/static/images/logot.jpg'alt='logo not found'/>
         
     <h6>
-        <p>Picta - Delivering Productivity Hacks</p>
+        <p>Picta - Delivering Productivity Services</p>
     </h6>
 </div>
     <div class='main_container'>
     <div class='left'id='left'>
-    <h3>
+     <h3>
         Quick Links
     </h3>
     <h6 class='link'>
-        Feedback:-<br>
-        Services:-<br>
-        Contact Us:-<br>
-        About Us:-<br>
-        Home:-<br>
+        <a class='link'href='{% url 'website_app:feedback'%}'>Feedback:</a>-<br>
+        <a class='link'href='{% url 'website_app:services'%}'>Services:-</a><br>
+        <a class='link'href='{% url 'website_app:contactus'%}'>Contact Us:-</a><br>
+        <a class='link'href='{% url 'website_app:about'%}'>About Us:-</a><br>
+        <a class='link'href='{% url 'website_app:index'%}'>Home:-</a><br>
     </h6>
 </div>
 <div class='center' id='body' >
@@ -47,15 +47,14 @@
     </form>
 </div>
         <div class='right'id='right'>
-    <h3>
+     <h3>
         Services
     </h3>
     <h6 class='link'>
-        Picta D.A<br>
-        Picta S.A<br>
-        Picta I.P<br>
-        Picta F.P<br>
-        Picta P.AS<br>
+        <a class='link'href='{% url 'da_app:da'%}'>Picta D.A</a><br>
+        <a class='link'href=''>Picta I.P</a><br>
+        <a class='link'href='{% url 'fp_app:fp'%}'>Picta F.P</a><br>
+        <a class='link'href='{% url 'pa_app:dashboard'%}'>Picta P.A</a><br>
     </h6>
 </div>
     </div>

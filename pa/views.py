@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from configcode import getid2,getid3
+from fp.models import AccountBalance,Transaction
+from ap.models import Promocode,Activation
+from configcode import getid2,getid3,getid13,getid6
 from .models import Task
 from da.models import Ticket
+import time,datetime
 # Create your views here.
 @login_required
 @csrf_exempt
@@ -22,7 +25,13 @@ def myworkday(request):
     dailytasks=request.POST.get('dailytasks')
     weeklytasks=request.POST.get('weeklytasks')
     monthlytasks=request.POST.get('monthlytasks')
+    autocomplete=request.POST.get('autocomplete')
     if request.POST:
+        if autocomplete:
+            print('automate')
+            my_dict={'autocomplete':'1'}
+            print('autocomplete activated')
+            return render(request,'pa/myworkdayaddtask.html',context=my_dict)
         taskname=request.POST.get('taskname')
         cost=request.POST.get('cost')
         nature=request.POST.get('nature')
@@ -137,7 +146,9 @@ def myworkday(request):
                 task.save()
                 my_dict={'task':task,'comment':'Successfully Opened Task Digitalization Ticket!'}
                 return render(request,'pa/myworkdayalltasks.html',context=my_dict)
-            my_dict={'task':task}
+            balance=AccountBalance.objects.get(account=user)
+            print(balance.amount)
+            my_dict={'task':task,'user':user,'balance':balance}
             return render(request,'pa/confirmdigitalization.html',context=my_dict)
         tasks=Task.objects.filter(account=user,nature='manual')
         my_dict={
@@ -168,9 +179,83 @@ def myworkday(request):
         return render(request,'pa/myworkdaydailytasks.html',context=my_dict)
     if weeklytasks:
         user=request.user
+        tasks2=Task.objects.filter(account=user,nature='pendingautomation') 
         tasks=Task.objects.filter(account=user,nature='digital')
+        outsource=request.POST.get('outsource')
+        if outsource:
+            confirmoutsource=request.POST.get('confirmoutsource')
+            token=request.POST.get('token')
+            print(token)
+            task=Task.objects.get(taskid=int(outsource))
+            print(task.taskid)
+            if confirmoutsource:
+                print('helo world')
+                token=request.POST.get('token')
+                balance=AccountBalance.objects.get(account=request.user)
+                try:
+                    discount1=Promocode.objects.get(code=token)
+                    balance.amount=balance.amount-18
+                    balance.save()
+                    Transaction.objects.create(transactionid=getid6(),account=request.user,transactiontype='Outsource Payment',amount=18,date = datetime.datetime.now(),staffid=request.user,reference=task)
+                    balance=AccountBalance.objects.get(account=discount1.account)
+                    balance.amount=balance.amount+8
+                    balance.save()
+                    Activation.objects.create(activationid=getid13(),product='Picta.com',account=discount1.account,payout=8)
+                    Transaction.objects.create(transactionid=getid6(),account=discount1.account,transactiontype='outsource Commission',amount=8,date = datetime.datetime.now(),staffid=request.user,reference=token)
+                
+                except:
+                    print('discount1 404')
+                    balance.amount=balance.amount-20
+                    Transaction.objects.create(transactionid=getid6(),account=request.user,transactiontype='Outsource Payment',amount=20,date = datetime.datetime.now(),staffid=request.user,reference=task)
+                    
+                    balance.save()
+                
+                
+                
+                Ticket.objects.create(ticketid=getid3(),account=user,task=task,request='outsource',status='open')
+                task.nature='pendingoutsource'
+                task.save()
+                user=request.user
+                tasks=Task.objects.filter(account=user,nature='digital')
+                my_dict={'task':task,'comment':'Successfully Opened Task Outsource Ticket!','tasks':tasks,'user':user}
+                return render(request,'pa/myworkdayweeklytasks.html',context=my_dict)
+            balance=AccountBalance.objects.get(account=user)
+            allowed = 0
+            discount=0
+            try:
+                print('error occured 1')
+                discount=Promocode.objects.get(code=token)
+                print('error occured 2')
+                        
+                        
+                
+                discount=1
+            except:
+                print('error occured except')
+                discount=0
+            if balance.amount < 20:
+                allowed=0
+            else:
+                allowed=1
+            if balance.amount>=18:
+                
+                if token:
+                    try:
+                        print('error occured 1')
+                        discount=Promocode.objects.get(code=token)
+                        print('error occured 2')
+                        
+                        
+                        allowed=1
+                        discount=1
+                    except:
+                        print('error occured except')
+                        discount=0
+            print(balance.amount)
+            my_dict={'task':task,'user':user,'balance':balance,'allowed':allowed,'discount':discount,'token':token}
+            return render(request,'pa/confirmoutsourcing.html',context=my_dict)
        
-        my_dict={'tasks':tasks}
+        my_dict={'tasks':tasks,'tasks2':tasks2}
         print('weeklytasks')
         return render(request,'pa/myworkdayweeklytasks.html',context=my_dict)
     if monthlytasks:

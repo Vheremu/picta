@@ -28,7 +28,27 @@
         <div class='buffer2'>
         </div>
         <div class='contentdiv'>
-            <p>Appointments</p>
+            <p class='contenttitle'>Appointments</p>
+             {%if appointments%}
+            {% for appointment in appointments%}
+            <p>Task Name:{{appointment.task.name}} <br>Request:{{appointment.ticket.request}}
+            <br>Status:{{appointment.ticket.status}}
+            {%if appointment.date%}
+            <br>Date:{{appointment.date}}
+            {%else%}
+            <br>Date:To be confirmed
+            {%endif%}
+                <form><input type='hidden'value='{{appointment.appointmentid}}'id='appointment'>
+                    <button class='menuitem'onclick='appointmentsbuttonclick()'>Reschedule</button>
+            </form>
+            </p><hr>
+            
+            {%endfor%}
+            {%else%}
+        <p><h1>You have no Appointments. Please book an appointment for your tickets. </h1></p>
+        
+            <p><b>NB</b>-all appointments are only for Picta DA tickets.</p>
+            {%endif%}
         </div>
     </div>
 </div>

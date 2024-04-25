@@ -51,8 +51,7 @@ function m1(){
 <h5 class='t'> <button class='dailytasksbutton' onclick="dailytasksbuttonclick()">Automate Task</button></h5>
 <h5 class='t'><button class='weeklytasksbutton' onclick="weeklytasksbuttonclick()">Outsource Task</button></h5>
 <h5 class='t'> <button class='monthlytasksbutton' onclick="monthlytasksbuttonclick()">Source Task</button></h5>
-<h5 class='t'>Source Tasks</h5>
-<h class='t'5>Outsource Tasks</h5>
+
         </div>
         <div class='topbuffer'>
         </div>
@@ -70,12 +69,9 @@ function m1(){
      <p><b>Task Time : {{task.time}} minutes (average)</b></p>
      <p><b>Task Cost : ${{task.cost}} (average)</b></p>
      <p><b>Task Nature : {{task.nature}}</b></p>
-            <form><input type='hidden'name='taskid'id='taskid'value={{task.taskid}}></form><button class='automatebutton'onclick='confirmautomate(taskid.value)'>Automate</button><button class='automatebutton'onclick='cancelautomate()'>Cancel</button>
+            <form><input type='hidden'name='taskid'id='taskid'value={{task.taskid}}></form><button class='addtaskbutton'onclick='confirmautomate(taskid.value)'>Automate</button><button class='addtaskbutton'onclick='cancelautomate()'>Cancel</button>
     </div>
-        
-  
-        <button onclick='st()'>Test</button>
-      
+
 
     </div>
     </div>

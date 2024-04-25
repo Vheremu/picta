@@ -5,12 +5,47 @@
 <div class='body'>
 <h1><p  class=title>About Us</p></h1>
 <div id='topmenu'>
-    <img src='http://127.0.0.1:8000/static/images/logo3.jpg'alt='logo not found'/>
+    <img class='logo' src='http://127.0.0.1:8000/static/images/logot.jpg'alt='logo not found'/>
         
     <h6>
-        <p>Picta - Delivering Productivity Hacks</p>
+        <p>Picta - Delivering Productivity Services</p>
     </h6>
 </div>
-    <div class='main_container'>sdgdf</div>
+    <div class='main_container'>
+	<div class='left'id='left'>
+    <h3>
+        Quick Links
+    </h3>
+    <h6 class='link'>
+        <a class='link'href='{% url 'website_app:feedback'%}'>Feedback:</a>-<br>
+        <a class='link'href='{% url 'website_app:services'%}'>Services:-</a><br>
+        <a class='link'href='{% url 'website_app:contactus'%}'>Contact Us:-</a><br>
+        <a class='link'href='{% url 'website_app:about'%}'>About Us:-</a><br>
+        <a class='link'href='{% url 'website_app:index'%}'>Home:-</a><br>
+    </h6>
 </div>
+	<div class='center'id='body'><h1>
+	<p class='title'>About Us</p></h1>
+        <p>What is Picta?</p>
+        <p>Picta is a Technology productivity services start-up that is in the Multi Trillion Dollar industry where Tech Giants like Microsoft and Adobe are making Billions. Picta has a Unix Philosophy which emphasizes small decentralized services. Tech giants have been making money with centralized services mixed with monopolistic tendencies and this makes Picta stand out as a company well aligned with the vision of the future of technology which is web 3.0.</p>
+        <p>Where is Picta?</p>
+        <p>Picta was Founded in February 2024 and registered in Zimbabwe as a Private Limited Company. Picta is a .com start-up founded in Zimbabwe where technology adoption is slow among professionals. Picta is positioned to accelerate the Digital Drive and Elevate clients careers.</p>
+        <p>How was Picta founded and Why?</p>
+        <p>Funding Picta was a family initiative. Max Shark ( Founder Zimdancers community ‘2018’ and Founder Ceo Picta ‘2024’ )  sourced funds from close friends and relative to be able to properly capitalize the Tech Start-up. Picta is yet to be officially Launched Publicly on 10 December 2024. Picta  has services available prelaunch including its signature service Picta P.A. Picta positioned to create value for clients and make profits for <b>investors</b> in the one page start-up era of the Chat GPT's.</p>
+        <p>What is Picta's Future?</p>
+        <p>Picta is strategicaly positioned for disruption in the Trillion Dollar technology productivity services industry dominated by the Chat Gpt's, Gmails, and Adobes of today.Picta is eager to tap into the unrealised potential of emmerging technology concepts like decentralisation, edge computing, cloud computing, and artificial intelligence by delivering physible services to implement , deliver value for clients and profits for investors. One page start-up ideology enables Picta to deliver services cheap and fast. Picta is determined to deliver a service that will break Chat Gpt's record of getting over a million users in less than 2 months after launch.</p>
+
+	</div>
+	<div class='right'id='right'>
+    <h3>
+        Services
+    </h3>
+    <h6 class='link'>
+        <a class='link'href='{% url 'da_app:da'%}'>Picta D.A</a><br>
+        <a class='link'href=''>Picta I.P</a><br>
+        <a class='link'href='{% url 'fp_app:fp'%}'>Picta F.P</a><br>
+        <a class='link'href='{% url 'pa_app:dashboard'%}'>Picta P.A</a><br>
+    </h6>
+</div>
+	</div>
 {% endblock %}

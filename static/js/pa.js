@@ -16,6 +16,16 @@ function st() {
       }
   });
 }
+function canceloutsource(){
+    
+    console.log('outsourcing ccanceled')
+    var formdata = new FormData();
+    formdata.append('weeklytasks','weeklytasks');
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", 'http://127.0.0.1:8000/pa/myworkday', false);
+    ajax.send(formdata);
+    document.documentElement.innerHTML = ajax.responseText
+}
 function canceldigitalize(taskid){
     console.log(' cancel digitalize task button clicked')
     var formdata = new FormData();
@@ -46,11 +56,35 @@ function confirmdigitalize(taskid){
     ajax.send(formdata);
     document.documentElement.innerHTML = ajax.responseText
 }
+function outsource(taskid,token){
+    console.log('outsource task button clicked'+token+'now')
+    var formdata = new FormData();
+    formdata.append('weeklytasks','weeklytasks');
+    formdata.append('outsource',taskid);
+    formdata.append('token',token);
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", 'http://127.0.0.1:8000/pa/myworkday', false);
+    ajax.send(formdata);
+    document.documentElement.innerHTML = ajax.responseText
+}
 function automate(taskid){
     console.log('automate task button clicked')
     var formdata = new FormData();
     formdata.append('dailytasks','dailytasks');
     formdata.append('automate',taskid);
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST", 'http://127.0.0.1:8000/pa/myworkday', false);
+    ajax.send(formdata);
+    document.documentElement.innerHTML = ajax.responseText
+}
+function confirmoutsource(taskid,token){
+    console.log('confirm outsource task button clicked'+taskid+'now'+token)
+    console.log('outsourcing confirmed')
+    var formdata = new FormData();
+    formdata.append('weeklytasks','weeklytasks');
+    formdata.append('outsource',taskid);
+    formdata.append('token',token);
+    formdata.append('confirmoutsource',taskid);
     var ajax = new XMLHttpRequest();
     ajax.open("POST", 'http://127.0.0.1:8000/pa/myworkday', false);
     ajax.send(formdata);
@@ -144,6 +178,7 @@ function monthlytasksbuttonclick(){
     document.documentElement.innerHTML = ajax.responseText
     
 };
+
 
 
 function test1(){

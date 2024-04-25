@@ -1,0 +1,109 @@
+{% extends 'fp/base.html' %}
+{% load static %}
+{% block body_block %}
+<link rel='stylesheet'href={% static 'css/fp.css'%}><br>
+<div class='body'>
+    <div class='topdiv'>
+        <img class='logo'src='http://127.0.0.1:8000/static/images/fp.jpg'></div><div class=body>
+    <div class='d1'><div class='menu'><div class='menutext'>
+        <h2 class='title'><b><a href='{% url 'fp_app:fp'%}'class=p1>Upload Funds</a></b></h2></div></div>
+        <div class='menu'><div class='menutext1'>
+        <h2 class='title1'><a href='{% url 'fp_app:withdrawfunds'%}'class=p>Withdraw Funds</a></h2></div> </div>
+        <div class='menu'><div class='menutext2'>
+            <h2 class='title1'><a href='{% url 'fp_app:myaccount'%}'class=p>My Account</a></h2></div></div>
+    </div><div class='payments'>For Payments Click Here! (Zesa Tokens,Dstv Subscription)</div><div class='subbody1'>
+    <div class='subbody'>
+         <div class='subbody2'>
+        
+        
+             <p>
+                 <b>Picta Finance Portal ( Ecocash, ZiG, USD Nostro and Visa/MasterCard Only)</b>
+             </p><br><hr>
+             <p>
+                 <b>Ecocash</b>
+             </p>
+             <p>
+                 Send Ecocash Usd or ZiG to Registered number 0783453569. Reference put your unique Picta Username. Rate for Ecocash Usd is P$1/$1Usd. Rate for Ecocash ZiG is P$1/ZW$10
+             </p>
+             <p>
+                 <b><u>NB</b></u> Ecocash payments reflect on Picta FP instantly
+             </p><br><hr>
+              <p>
+                 <b>ZiG NMBZ Bank Limited</b>
+             </p>
+             <p>
+                 Send ZiG to account number 233457108. Reference put your unique Picta Username. Rate for Ecocash Usd is P$1/$10ZiG.
+             </p>
+             <p>
+                 <b><u>NB</b></u> ZiG payments reflect on Picta FP instantly
+             </p><br><hr>
+              <p>
+                 <b>USD Nostro NMBZ Bank Limited</b>
+             </p>
+             <p>
+                 Send USD Nostro to account number 232496703. Reference put your unique Picta Username. Rate for Ecocash Usd is P$1/$1Nostro.
+             </p>
+             <p>
+                 <b><u>NB</b></u> USD Nostro payments reflect on Picta FP instantly
+             </p><br><hr>
+             <p>
+                 <b>
+                     USD  Visa NMBZ Bank Limited
+                 </b>
+             </p>
+             <p>
+                 Send Money to account 2345123434561234. Reference put your unique Picta username. Rate for Mastercard / Visa $1/$1
+                 
+             </p>
+             <p>
+                 <b><u>NB</b></u> USD Visa payments reflect on Picta FP instantly
+             </p><br><hr>
+             <p>
+                 <b>
+                     Upload Proof of Payment
+                 </b>
+             </p>
+             {%if message %}
+             <p class='success'>
+                 <b>
+                    {{message}}
+                    
+                 </b>
+             </p>
+             {%endif%}
+             
+             {%if message1 %}
+             <p class='success1'>
+                 <b>
+                    {{message1}}
+                    
+                 </b>
+             </p>
+             {%endif%}
+             <p>
+                 <b><u>NB</b></u> Upload Proof of Payment only if you make a payment and it does not reflect on Picta Finance Portal in 10 minutes of time.
+             </p>
+              <form action={% url 'fp_app:fp'%} method='POST'enctype='multipart/form-data' method='post'>
+                  {% csrf_token %}
+             <p>Upload P.O.P:</p><input type='file'name='pop'>(Required)
+        <br><br>
+            <input class='button1' type='submit' name='' value='Upload'>
+        
+        
+    </form>
+    </div> <p align='center'>Picta-'Peak Professional Perfomance Lifestyle'</p>
+    </div>
+       </div>
+   
+        
+    
+   
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+{%endblock%}
